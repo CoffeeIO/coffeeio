@@ -1,3 +1,6 @@
+.post-list {
+    margin: 0 10px 15px 10px;
+}
 .front-header {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -6,9 +9,25 @@
     font-family: 'Lobster', cursive;
 }
 .front-post {
-    padding: 10px;
-    margin: 20px;
-    background: white;
+    // padding: 10px;
+    // margin: 20px;
+    // background: white;
     border-radius: 6px;
-    border: 1px solid white;
+    // border: 1px solid white;
+    width: 100%;
+    > div {
+        display: inline-block;
+        width: 100%;
+        @include respond-to(medium) {
+            width: calc(50% - 12px);
+        }
+    }
+    @include clearfix;
+}
+.front-post-display {
+    float: left;
+}
+.front-post-desc {
+    float: right;
+    background: white;
 }
