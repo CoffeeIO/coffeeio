@@ -1,0 +1,15 @@
+$breakpoints: (
+    small: 568px,
+    medium: 768px,
+    large: 992px
+);
+
+/* Define colors */
+$color-black: #000;
+$color-white: #fff;
+$color-armadillo: #474039;
+
+/* Apply colors */
+$color-font: $color-armadillo;
+$color-background: $color-white;
+$color-site-title: $color-black;
