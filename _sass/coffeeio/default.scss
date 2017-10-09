@@ -1,6 +1,6 @@
 body {
-    background: #fff;
-    color: #474039;
+    background: $color-background;
+    color: $color-font;
     font-family: 'Raleway', sans-serif;
 }
 hr {
@@ -9,7 +9,7 @@ hr {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 h1 {
-    color: black;
+    color: $color-site-title;
     font-size: 4em;
     text-align: center;
     @include respond-to(small) {
@@ -27,7 +27,7 @@ h1 {
         text-decoration: none;
         &:hover {
             text-decoration: none;
-            color: #474039;
+            color: $color-font;
         }
     }
     .wrapper {
