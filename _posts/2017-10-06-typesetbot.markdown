@@ -1,13 +1,14 @@
 ---
 layout: post
 title:  "TypesetBot"
-date:   2017-10-04 13:30:09 +0200
-cdn: https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.min.css
+desc: "Small project to dynamically typeset text on the web."
+date:   2017-10-06 12:00:00 +0100
+snippet-type: image
+snippet: https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png
 ---
 
-<h1 align="center">TypesetBot</h1>
 <p align="center">
-    <img alt="Rax" src="logo.png" width="300">
+    <img alt="Rax" src="https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png" width="300">
 </p>
 <p align="center">
 Small project to dynamically typeset text on the web.

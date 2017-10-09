@@ -10,14 +10,18 @@ layout: default
         {% for post in site.posts %}
         <div class="front-post">
             <div class="front-post-display">
-                <img src="https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png" >
+                {% if post.snippet-type == 'image' %}
+                    <img src="{{ post.snippet }}" >
+                {% else if post.snippet-type == 'code' %}
+                    {{ post.snippet }}
+                {% endif %}
             </div>
             <div class="front-post-desc">
                 <li>
                     <h2>
                         {{ post.title | escape }}
                     </h2>
-                    <p>Typeset text w. TeX inspired algorithm</p>
+                    <p>{{ post.desc }}</p>
                     <a href="{{ post.url | relative_url }}">View project <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </li>
             </div>

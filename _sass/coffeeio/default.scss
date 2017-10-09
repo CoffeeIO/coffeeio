@@ -17,7 +17,8 @@ h1 {
     }
 }
 .wrapper {
-    padding: 0;
+    padding: 0 5px;
+    max-width: calc(1000px);
 }
 
 
@@ -48,4 +49,8 @@ h1 {
     img {
         height: 32px;
     }
+}
+
+.post-meta {
+    display: none;
 }
