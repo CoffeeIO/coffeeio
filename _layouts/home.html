@@ -10,15 +10,15 @@ layout: default
         {% for post in site.posts %}
         <div class="front-post">
             <div class="front-post-display">
-                <img src="https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png">
+                <img src="https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png" >
             </div>
             <div class="front-post-desc">
                 <li>
-                    {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-                    <span class="post-meta">{{ post.date | date: date_format }}</span>
                     <h2>
-                        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                        {{ post.title | escape }}
                     </h2>
+                    <p>Typeset text w. TeX inspired algorithm</p>
+                    <a href="{{ post.url | relative_url }}">View project <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </li>
             </div>
 

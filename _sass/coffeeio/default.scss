@@ -1,5 +1,7 @@
 body {
-    background: rgba(0,0,0,0.035);
+    background: #fff;
+    color: #474039;
+    font-family: 'Raleway', sans-serif;
 }
 hr {
     border: 0;
@@ -7,6 +9,7 @@ hr {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 h1 {
+    color: black;
     font-size: 4em;
     text-align: center;
     @include respond-to(small) {
@@ -15,4 +18,34 @@ h1 {
 }
 .wrapper {
     padding: 0;
+}
+
+
+.site-footer {
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+            color: #474039;
+        }
+    }
+    .wrapper {
+        height: 32px;
+    }
+}
+.footer-heading {
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+}
+.footer-social {
+    float: right;
+}
+.footer-social-icon {
+    margin-left: 10px;
+    img {
+        height: 32px;
+    }
 }
