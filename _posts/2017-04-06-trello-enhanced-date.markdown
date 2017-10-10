@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Trello Enhanced Date (unsupported)"
+title:  "Trello Enhanced Date (inactive)"
 desc: "Chrome Extension for making the Trello due date reminder more customizable."
 date:   2017-04-06 12:00:00 +0100
 snippet-type: image
