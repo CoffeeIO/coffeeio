@@ -21,7 +21,6 @@
         width: 100%;
         text-align: center;
         @include respond-to(medium) {
-            text-align: left;
             width: calc(50% - 12px);
             @include vertical-align-middle;
         }
@@ -35,18 +34,22 @@
             float: left;
         }
     }
-}
-.front-post-display {
-    float: left;
-    max-height: 100%;
-    img {
-        max-width: 100%;
+    .front-post-display {
+        float: left;
         max-height: 100%;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        @include respond-to(medium) {
+            height: 100%;
+            text-align: center;
+        }
     }
-    @include respond-to(medium) {
-        height: 100%;
+    .front-post-desc {
+        float: right;
+        @include respond-to(medium) {
+            text-align: left;
+        }
     }
-}
-.front-post-desc {
-    float: right;
 }
