@@ -4,12 +4,12 @@ title:  "TypeOtter (inactive)"
 desc: "TypeOtter is a Javascript library that allows html to be rendered with high quality typesetting in html and pdf."
 date:   2017-05-06 12:00:00 +0100
 snippet-type: image
-snippet: http://i.imgur.com/tGz40Of.png
+snippet: https://raw.githubusercontent.com/CoffeeIO/TypeOtter/master/logo.png
 ---
 
 <p align="center">
     <a href="http://mgapcdev.github.io/TypeOtter/">
-        <img alt="Rax" src="http://i.imgur.com/tGz40Of.png" width="300">
+        <img alt="Rax" src="https://raw.githubusercontent.com/CoffeeIO/TypeOtter/master/logo.png" width="300">
     </a>
 </p>
 <p align="center">
