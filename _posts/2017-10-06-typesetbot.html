@@ -1,0 +1,57 @@
+---
+layout: default
+title:  "TypesetBot"
+desc: "Small project to dynamically typeset text on the web."
+date:   2017-10-06 12:00:00 +0100
+snippet-type: image
+snippet: https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png
+---
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://rawgit.com/RickStrahl/jquery-resizable/master/src/jquery-resizable.js"></script>
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<header class="post-header typesetbot-header">
+  <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+  <p align="center">
+  Dynamically typeset text on the web.
+  </p>
+</header>
+
+<img class="typesetbot-logo" alt="Rax" src="https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png" width="300">
+<div style="clear:both"></div>
+
+<div class="panel-container">
+    <div class="panel-left">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suscipit magna sit amet mi ullamcorper, ac egestas sem tempor. Suspendisse maximus massa orci, non condimentum ligula gravida nec. Nam lacus orci, elementum id dolor vitae, laoreet commodo elit. Morbi a felis sit amet diam egestas convallis. Sed imperdiet vestibulum lacus, euismod sagittis nisi suscipit sit amet. Nam ut lectus nunc. Aliquam erat volutpat. Suspendisse sollicitudin finibus neque eu posuere. Etiam cursus fermentum nibh, ac iaculis quam fringilla et. Proin lacinia imperdiet lorem. Duis in lorem non lectus accumsan bibendum. Fusce mattis purus vitae lacus posuere suscipit. Donec vitae nibh quis lacus lacinia consequat eget in mauris. Ut diam mauris, dictum id porta id, lacinia scelerisque neque.
+
+    Nullam id ultrices ligula, eget ullamcorper risus. Aenean a justo sed felis maximus blandit in ut purus. Vestibulum pharetra urna non nisi pharetra mattis. Duis neque eros, ultrices in malesuada dignissim, porttitor quis lectus. Mauris id bibendum odio. In porttitor, libero a pulvinar tincidunt, purus ante auctor augue, ornare placerat sem dui nec ante. Ut tincidunt ante pretium magna dictum, id venenatis nulla cursus. Integer porta mauris arcu, in viverra elit sagittis at.
+        </p>
+    </div>
+    <div class="splitter"></div>
+    <div class="panel-right">
+        <h3>Settings:</h3>
+{% highlight javascript %}
+TypesetBot.attach(
+  '.some-query-selector',
+  {
+    alignment: 'justify',
+    hyphenLanguage: 'en-us',
+    ...
+  }
+);
+{% endhighlight %}
+    </div>
+</div>
+
+
+
+<script>
+$(".panel-left").resizable({
+  handleSelector: ".splitter",
+  resizeHeight: false
+});
+</script>
+
+</article>

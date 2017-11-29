@@ -1,6 +1,9 @@
+// General.
 @import "coffeeio/variables";
 @import "coffeeio/mixins";
-
+// Site.
 @import "coffeeio/default";
 @import "coffeeio/frontpage";
 @import "coffeeio/post";
+// Articles.
+@import "coffeeio/typesetbot";
