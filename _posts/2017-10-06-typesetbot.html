@@ -6,19 +6,49 @@ date:   2017-10-06 12:00:00 +0100
 snippet-type: image
 snippet: https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png
 ---
+<link rel="stylesheet" href="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+<script type="text/javascript" src="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.js"></script>
+
+<!-- (optional) -->
+<!-- hyphenation library -->
+<script type="text/javascript" src="https://cdn.rawgit.com/bramstein/hypher/v0.2.5/dist/jquery.hypher.js"></script>
+<!-- hyphenation pattern for US english -->
+<script type="text/javascript" src="https://cdn.rawgit.com/bramstein/hyphenation-patterns/dc01d58a/dist/browser/en-us.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://rawgit.com/RickStrahl/jquery-resizable/master/src/jquery-resizable.js"></script>
+<script src="/assets/scripts/ResizeSensor.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 <header class="post-header typesetbot-header">
-  <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
-  <p align="center">
-  Dynamically typeset text on the web.
-  </p>
+    <div class="typesetbot-title">
+        <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+        <p align="center">
+        Dynamically typeset text on the web.
+        </p>
+        <p align="center">
+        <div class="typesetbot-title-badgets">
+            <a href="https://travis-ci.org/CoffeeIO/TypesetBot" rel="nofollow"><img alt="TypesetBot" src="https://camo.githubusercontent.com/2217ddb004939a9faf009ef172601c37cdbdfbed/68747470733a2f2f7472617669732d63692e6f72672f436f66666565494f2f54797065736574426f742e7376673f6272616e63683d6d6173746572" data-canonical-src="https://travis-ci.org/CoffeeIO/TypesetBot.svg?branch=master" style="max-width:100%;"></a>
+            <a href="https://www.codacy.com/app/mgapcdev/TypesetBot/dashboard" rel="nofollow"><img src="https://camo.githubusercontent.com/f0e2ef069966c45dfd4468631773c496ba216e2e/68747470733a2f2f6170692e636f646163792e636f6d2f70726f6a6563742f62616467652f47726164652f6330393831333665663831333435623738633438306565363935333134613231" data-canonical-src="https://api.codacy.com/project/badge/Grade/c098136ef81345b78c480ee695314a21" style="max-width:100%;"></a>
+            <a href="/CoffeeIO/TypesetBot/blob/master/LICENSE"><img alt="TypesetBot" src="https://camo.githubusercontent.com/d3518f2bfc1c5dc83f59ba8188a4fdee4553caae/68747470733a2f2f696d672e736869656c64732e696f2f6175722f6c6963656e73652f79616f7572742e737667" data-canonical-src="https://img.shields.io/aur/license/yaourt.svg" style="max-width:100%;"></a>
+        </div>
+        <div class="typesetbot-title-badgets">
+            <a href="https://www.npmjs.com/package/typesetbot" rel="nofollow"><img alt="typesetbot" src="https://camo.githubusercontent.com/a5a84cb0972a914cecd17945558654818c1906b0/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f74797065736574626f742e737667" data-canonical-src="https://img.shields.io/npm/v/typesetbot.svg" style="max-width:100%;"></a>
+            <a href="https://www.npmjs.com/package/typesetbot" rel="nofollow"><img alt="typesetbot" src="https://camo.githubusercontent.com/799f203d5f48590f01861dab0bd690860aadd724/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f646d2f74797065736574626f742e737667" data-canonical-src="https://img.shields.io/npm/dm/typesetbot.svg" style="max-width:100%;"></a>
+        </div>
+        <div class="typesetbot-title-badgets">
+            <a href="https://waffle.io/CoffeeIO/TypesetBot" rel="nofollow"><img alt="TypesetBot" src="https://camo.githubusercontent.com/737ba2df181aed091cfacc3b0f5d09507fdd17d0/68747470733a2f2f62616467652e776166666c652e696f2f436f66666565494f2f54797065736574426f742e7376673f636f6c756d6e733d616c6c" data-canonical-src="https://badge.waffle.io/CoffeeIO/TypesetBot.svg?columns=all" style="max-width:100%;"></a>
+        </div>
+        </p>
+    </div>
+    <img class="typesetbot-logo" alt="Rax" src="https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png" width="300">
+
 </header>
 
-<img class="typesetbot-logo" alt="Rax" src="https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png" width="300">
 <div style="clear:both"></div>
 
 <div class="panel-container">
@@ -44,13 +74,319 @@ TypesetBot.attach(
 {% endhighlight %}
     </div>
 </div>
+<p><a href="#">Explore the demo on CodePen</a></p>
+<div class="content">
+<h2><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>Install</h2>
+
+<h3>NPM</h3>
+{% highlight bash %}
+# Install
+$ npm install typesetbot
+
+# (optional) Download hyphenation library and patterns, for example US english
+$ npm install hypher hyphenation.en-us
+{% endhighlight %}
+
+<h3>CDN</h3>
+{% highlight html %}
+<link rel="stylesheet" href="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.min.css">
+<script type="text/javascript" src="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.js"></script>
+
+<!-- (optional) -->
+<!-- hyphenation library -->
+<script type="text/javascript" src="https://cdn.rawgit.com/bramstein/hypher/v0.2.5/dist/jquery.hypher.js"></script>
+<!-- hyphenation pattern for US english -->
+<script type="text/javascript" src="https://cdn.rawgit.com/bramstein/hyphenation-patterns/dc01d58a/dist/browser/en-us.js"></script>
+{% endhighlight %}
+
+<h2>License</h2>
+
+<h3>Commercial license</h3>
+
+If you want to use TypesetBot to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. If you want to purchase a TypesetBot Commercial License contact: mgapcdev@gmail.com
+
+<h3>Open source license</h3>
+
+If you are creating an open source application under a license compatible with the [GNU GPL license v3](https://www.gnu.org/licenses/gpl-3.0.html), you may use TypesetBot under the terms of the GPLv3.
+
+<h2>Basic usage</h2>
+{% highlight html %}
+<html>
+<head>
+    <link rel="stylesheet" href="node_modules/typesetbot/dist/typesetbot.min.css">
+    <script type="text/javascript" src="node_modules/typesetbot/dist/typesetbot.js"></script>
+
+    <script type="text/javascript" src="node_modules/hypher/dist/jquery.hypher.js"></script>
+    <script type="text/javascript" src="node_modules/hyphenation.en-us/lib/en-us.js"></script>
+    <script type="text/javascript">
+        TypesetBot.attach('body');
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum...</p>
+</body>
+</html>
+{% endhighlight %}
+
+Your browser uses a very simple line breaking algorithm to arrange the text on your screen, TypesetBot changes this arrangement using am algorithm inspired by TeX's total-fit algorithm. TypesetBot looks at all the lines in your paragraph and finds the best line breaks for all of them. This process reduces whitespace between words and applies hyphenations only when necessary, so the text becomes more readable.
+
+TypesetBot is designed with the web in mind: written in JavaScript for wide support, query selector to only typeset the correct elements, recalculates the typesetting when the viewport size changes, support for inline tags, easy installs with CDN and NPM, hyphenation for 39 languages.
+
+<h2>Features</h2>
+<h3>Line breaking</h3>
+The line breaking algorithm implemented, is inspired by TeX's implementation of the total-fit algorithm. The algorithm was detailed in the <a href="https://www.amazon.com/Digital-Typography-Lecture-Notes-Donald-ebook/dp/B01MQGA5KF/ref=mt_kindle?_encoding=UTF8&me=" target="_blank">Digital Typography by Donald Knuth</a>.
+The implementation was modified to make better sense in the web domain. This required some rethinking some fundamentatal elements of the algorithm we get: use of query selectors,  html inline-tag support, handle viewport changes and feeding preprocessed data.
+
+<h3>Query selectors</h3>
+TypesetBot only work on paragraph elements (<span class="inline-code">{% highlight html %}<p>{% endhighlight %}</span>). TypesetBot doesn't have to change your entire website, using query selectors like found in jQuery to select a single paragraph or a bigger selector to typeset multiple paragraphs.
+Using 'body' you can typeset all paragraphs on a page or '.content' to find all paragraphs within the content class.
+
+<h3>Hyphenation</h3>
+TypesetBot don't require the use of hyphenation libraries, but hyphenation of words can be used to greatly improve the line breaking quality. Hyphenation is done with <a href="https://github.com/bramstein/hypher" target="_blank">hypher</a> and uses the open source TeX hyphenation patterns and can hyphenate text in various languages. Languages supported can be found in <a href="https://github.com/bramstein/hyphenation-patterns/tree/master/dist/browser" target="_blank">hyphenation-patterns by bramstein</a>.
+
+<h3>Viewport changes</h3>
+With responsive design being a important thing on the web, I think it only made sense to consider that the user might change the viewport size by dragging the browser or going from portrait to landscape on mobile. When using the _TypesetBot.attach()_ we recalculate the line breaking every time the viewport changes and with some clever CSS the transition is hard to notice.
+
+<h3>Tag support</h3>
+On of the biggest changes that had to be made from the total-fit algorithm, is the support for inline tags in paragraphs. The support allows the user to wrap text in style changing tags like <span class="inline-code">{% highlight html %}<span>{% endhighlight %}</span> or <span class="inline-code">{% highlight html %}<b class="someClass">{% endhighlight %}</span> these can be used as you would expect, even in the middle of a word and with styles that change the font-size.
+
+<h3>Settings</h3>
+TypesetBot has been made to be very adjustable as there is no perfect settings. Some of these settings can increase the performance and behavior so it's important to expose these to the user.
+{% highlight javascript unknown %}
+{
+    // Algorithm.
+    alignment: 'justify', // Other options are 'ragged-right', 'ragged-left' and 'ragged-center'
+
+    hyphenPenalty: 50, // Penalty for line-breaking on a hyphen
+    hyphenPenaltyRagged: 500, // Penalty for line-breaking on a hyphen when using ragged text
+    flagPenalty: 3000, // Penalty when current and last line had flag value 1. Reffered to as 'α'
+    fitnessClassDemerit: 3000, // Penalty when switching between ratio classes. Reffered to as 'γ'
+    demeritOffset: 1, // Offset to prefer fewer lines by increasing demerit of "~zero badness lines"
+
+    // "the value of q is increased by 1 (if q < 0) or decreased by 1 (if q > 0) until a feasible solution is
+    //  found." - DT p.114
+    loosenessParam: 0, // If zero we find to solution with fewest total demerits. Reffered to as 'q'
+    absoluteMaxRatio: 5, // Max adjustment ratio before we give up on finding solutions
+
+    maxRatio: 2, // Maximum acceptable adjustment ratio. Referred to as 'p'
+    minRatio: -1, // Minimum acceptable adjustment ratio. Less than -1 will make the text too closely spaced.
+
+    // Hyphen.
+    hyphenLanguage: 'en-us', // Language of hyphenation patterns to use
+    hyphenLeftMin: 2, // Minimum number of letters to keep on the left side of word
+    hyphenRightMin: 2, // Minimum number of letters to keep on the right side of word
+
+    // 4 classes of adjustment ratios.
+    fitnessClass: [-1, -0.5, 0.5, 1, Infinity],
+
+    // Font.
+    spaceUnit: 'em', // Space width unit, em is relative to font-size
+    spaceWidth: 1/3, // Ideal space width
+    spaceStretchability: 1/6, // How much can the space width stretch
+    spaceShrinkability: 1/9, // How much can the space width shrink
+
+    // Inline element that the program will unwrap from paragraphs as they could disrupt the line breaking.
+    unwrapElements: ['img'],
 
 
+    // Dynamic width.
+
+    // Allow the paragraph to account for overlapping elements, turn this off if you know there's no overlapping
+    // element to gain performance.
+    dynamicWidth: true,
+    // Pixel increment of vertical search, higher better performance, lower more accurate result.
+    dynamicWidthIncrement: 5,
+
+    // Functions.
+    ratio (idealW, actualW, wordCount, shrink, stretch, settings) { // Adjustment ratio
+        if (actualW < idealW) {
+            return (idealW - actualW) / ((wordCount - 1) * stretch);
+        }
+
+        return (idealW - actualW) / ((wordCount - 1) * shrink);
+    },
+    badness (ratio, settings) { // Badness calculation
+        if (ratio == null || ratio < settings.minRatio) {
+            return Infinity;
+        }
+
+        return 100 * Math.pow(Math.abs(ratio), 3) + 0.5;
+    },
+    demerit (badness, penalty, flag, settings) { // Demerit calculation
+        var flagPenalty = flag ? settings.flagPenalty : 0;
+        if (penalty >= 0) {
+            return Math.pow(settings.demeritOffset + badness + penalty, 2) + flagPenalty;
+        } else if (penalty === -Infinity) {
+            return Math.pow(settings.demeritOffset + badness, 2) + flagPenalty;
+        } else {
+            return Math.pow(settings.demeritOffset + badness, 2) - Math.pow(penalty, 2) + flagPenalty;
+        }
+    },
+    debug: false // Print performance information
+}
+{% endhighlight %}
+
+<h3>Performance</h3>
+
+<h3>Quality</h3>
+The easiest way to compare quality of the typesetting is to look at the adjustment ratios that indecates how tight or loose a line is. Ideally we this value to be zero so the word-spacing is exactly 1/3 em, plain HTML can only increase word-spacing is necesarry, while TypesetBot can both increase and decrease it. The point is to degrace visual impact, so we strongly prefer to have 2 ratios of value 1, over having 1 ratio of 2 and 1 ratio of 0. TypesetBot even tries to minizing the jump between a loose line and tight line.
+
+Normal HTML has an easier time line breaking on wider lines, but on smaller viewports it starts to fall apart, so we can see how this is affected as multiple viewports.
+
+Reference: <a href="https://codepen.io/MGApcDev/pen/YxoaWe" target="_blank">here</a>
+<h4>900px wide</h4>
+<p align="center">
+    <img alt="Quick Example" src="http://i.imgur.com/HHBbtmF.gif">
+</p>
+
+<h4>500px wide</h4>
+<p align="center">
+    <img alt="Quick Example" src="http://i.imgur.com/GTyyZ1a.gif">
+</p>
+
+<h4>200px wide</h4>
+<p align="center">
+    <img alt="Quick Example" src="http://i.imgur.com/SUpnELJ.gif">
+</p>
+
+<style media="screen">
+* { box-sizing: border-box; }
+
+.carousel {
+background: #EEE;
+}
+
+.carousel-cell {
+width: 66%;
+height: 200px;
+margin-right: 10px;
+background: #8C8;
+border-radius: 5px;
+counter-increment: carousel-cell;
+}
+
+/* cell number */
+.carousel-cell:before {
+display: block;
+text-align: center;
+content: counter(carousel-cell);
+line-height: 200px;
+font-size: 80px;
+color: white;
+}
+</style>
+<div class="carousel"
+  data-flickity='{ "wrapAround": true }'>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+</div>
+
+<h3>Execution time</h3>
+TypesetBot constructs a list of objects for each paragraph on the first run, the list contains information for every word and hyphenation in the paragraph, so it's an expensive task, but only occurs on a new page load.
+The second run occurs when the users adjusts the viewport and all the linebreaking and additional hyphenations needs to be calculated.
+
+Reference: <a href="http://codepen.io/MGApcDev/pen/QvOpeq" target="_blank">here</a>
+<h4>Performance examples</h4>
+
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>First run</th>
+            <th>Second run</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>1 paragraph, 441 words, w. hyphenation</td>
+            <td>143ms</td>
+            <td>137ms</td>
+        </tr>
+
+        <tr>
+            <td>1 paragraph, 441 words, w/o. hyphenation</td>
+            <td>109ms</td>
+            <td>74ms</td>
+        </tr>
+
+        <tr>
+            <td>1 paragraph, 882 words, w. hyphenation</td>
+            <td>270ms</td>
+            <td>209ms</td>
+        </tr>
+        <tr>
+            <td>1 paragraph, 882 words, w/o. hyphenation</td>
+            <td>170ms</td>
+            <td>123ms</td>
+        </tr>
+        <tr>
+            <td>2 paragraph, 441 words, w. hyphenation</td>
+            <td>275ms</td>
+            <td>147ms</td>
+        </tr>
+        <tr>
+            <td>2 paragraph, 441 words, w/o. hyphenation</td>
+            <td>130ms</td>
+            <td>111ms</td>
+        </tr>
+        <tr>
+            <td>1 paragraph, 441 words, w. hyphenation, w/o. dynamic width</td>
+            <td>53ms</td>
+            <td>51ms</td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
 
 <script>
+
+// Event handler for re-runing typesetbot.
+var selector = '.panel-left';
+var rtime;
+var timeout = false;
+var delta = 200;
+var element = document.querySelector(selector);
+var prevSize = 0;
+new ResizeSensor(element, function() {
+    if (prevSize == element.clientWidth) {
+        return;
+    }
+    prevSize = element.clientWidth;
+    $('body').addClass('typeset-viewport');
+    rtime = new Date();
+    if (timeout === false) {
+        timeout = true;
+        setTimeout(resizeend, delta);
+    }
+});
+function resizeend() {
+    if (new Date() - rtime < delta) {
+        setTimeout(resizeend, delta);
+    } else {
+        timeout = false;
+        $('body').removeClass('typeset-viewport');
+        TypesetBot.runAllAttached();
+    }
+}
+
+// Make Typesetbot test resizable.
 $(".panel-left").resizable({
   handleSelector: ".splitter",
   resizeHeight: false
+});
+
+// Run typesetbot.
+// TypesetBot.attach('.panel-left');
+
+// Add gallery.
+$('.main-gallery').flickity({
+  cellAlign: 'left',
+  contain: true
 });
 </script>
 

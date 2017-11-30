@@ -1,9 +1,18 @@
 .typesetbot-header {
-    float: left;
+    text-align: center;
+}
+.typesetbot-title {
+    display: inline-block;
     margin: 30px;
+    vertical-align: middle;
 }
 .typesetbot-logo {
+    display: inline-block;
     margin: 5px;
+}
+
+.pure-table {
+    margin: 0 auto;
 }
 
 /* https://codepen.io/rstrahl/pen/eJZQej */
