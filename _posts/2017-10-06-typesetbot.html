@@ -12,13 +12,11 @@ snippet: https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png
 
 <script type="text/javascript" src="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.js"></script>
 
-<!-- (optional) -->
-<!-- hyphenation library -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.rawgit.com/bramstein/hypher/v0.2.5/dist/jquery.hypher.js"></script>
-<!-- hyphenation pattern for US english -->
 <script type="text/javascript" src="https://cdn.rawgit.com/bramstein/hyphenation-patterns/dc01d58a/dist/browser/en-us.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script src="https://rawgit.com/RickStrahl/jquery-resizable/master/src/jquery-resizable.js"></script>
 <script src="/assets/scripts/ResizeSensor.js"></script>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
@@ -258,7 +256,7 @@ background: #EEE;
 
 .carousel-cell {
 width: 66%;
-height: 200px;
+height: 500px;
 margin-right: 10px;
 background: #8C8;
 border-radius: 5px;
@@ -270,7 +268,7 @@ counter-increment: carousel-cell;
 display: block;
 text-align: center;
 content: counter(carousel-cell);
-line-height: 200px;
+line-height: 500px;
 font-size: 80px;
 color: white;
 }
@@ -381,7 +379,7 @@ $(".panel-left").resizable({
 });
 
 // Run typesetbot.
-// TypesetBot.attach('.panel-left');
+TypesetBot.attach('.panel-left');
 
 // Add gallery.
 $('.main-gallery').flickity({
