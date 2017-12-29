@@ -66,7 +66,7 @@ TypesetBot.attach(
   {
     alignment: 'justify',
     hyphenLanguage: 'en-us',
-    ...
+    // ...more settings
   }
 );
 {% endhighlight %}
@@ -247,40 +247,48 @@ Reference: <a href="https://codepen.io/MGApcDev/pen/YxoaWe" target="_blank">here
     <img alt="Quick Example" src="http://i.imgur.com/SUpnELJ.gif">
 </p>
 
-<style media="screen">
-* { box-sizing: border-box; }
+<main>
 
-.carousel {
-background: #EEE;
-}
+  <input id="tab1" type="radio" name="tabs" >
+  <label for="tab1" class="quali-tabs">Desktop</label>
 
-.carousel-cell {
-width: 66%;
-height: 500px;
-margin-right: 10px;
-background: #8C8;
-border-radius: 5px;
-counter-increment: carousel-cell;
-}
+  <input id="tab2" type="radio" name="tabs" checked>
+  <label for="tab2" class="quali-tabs">Tablet</label>
 
-/* cell number */
-.carousel-cell:before {
-display: block;
-text-align: center;
-content: counter(carousel-cell);
-line-height: 500px;
-font-size: 80px;
-color: white;
-}
-</style>
-<div class="carousel"
-  data-flickity='{ "wrapAround": true }'>
-  <div class="carousel-cell"></div>
-  <div class="carousel-cell"></div>
-  <div class="carousel-cell"></div>
-  <div class="carousel-cell"></div>
-  <div class="carousel-cell"></div>
-</div>
+  <input id="tab3" type="radio" name="tabs">
+  <label for="tab3" class="quali-tabs">Mobile</label>
+
+  <section id="content1">
+      <div class="carousel">
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+      </div>
+  </section>
+
+  <section id="content2">
+      <div class="carousel">
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+      </div>
+  </section>
+
+  <section id="content3">
+      <div class="carousel">
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+      </div>
+  </section>
+
+</main>
 
 <h3>Execution time</h3>
 TypesetBot constructs a list of objects for each paragraph on the first run, the list contains information for every word and hyphenation in the paragraph, so it's an expensive task, but only occurs on a new page load.
@@ -382,9 +390,14 @@ $(".panel-left").resizable({
 TypesetBot.attach('.panel-left');
 
 // Add gallery.
-$('.main-gallery').flickity({
-  cellAlign: 'left',
-  contain: true
+$carousel = $('.carousel').flickity({
+  "wrapAround": true
+});
+
+$('.quali-tabs').on('click', function() {
+    setTimeout(function () {
+        $carousel.flickity('resize');
+    }, 10);
 });
 </script>
 
