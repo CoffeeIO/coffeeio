@@ -49,6 +49,7 @@ snippet: https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png
 
 <div style="clear:both"></div>
 
+<div class="content">
 <div class="panel-container">
     <div class="panel-left">
         <p>
@@ -73,10 +74,35 @@ TypesetBot.attach(
     </div>
 </div>
 <p><a href="#">Explore the demo on CodePen</a></p>
-<div class="content">
-<h2><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>Install</h2>
 
-<h3>NPM</h3>
+<ul class="pure-menu-list table-of-contents">
+    <li class="pure-menu-item"><a href="#install" class="pure-menu-link">Install</a></li>
+        <li class="pure-menu-item indent"><a href="#npm" class="pure-menu-link">NPM</a></li>
+        <li class="pure-menu-item indent"><a href="#cdn" class="pure-menu-link">CDN</a></li>
+
+    <li class="pure-menu-item"><a href="#license" class="pure-menu-link">License</a></li>
+        <li class="pure-menu-item indent"><a href="#commercial" class="pure-menu-link">Commercial license</a></li>
+        <li class="pure-menu-item indent"><a href="#open-source" class="pure-menu-link">Open source license</a></li>
+
+    <li class="pure-menu-item"><a href="#basic-usage" class="pure-menu-link">Basic usage</a></li>
+
+    <li class="pure-menu-item"><a href="#features" class="pure-menu-link">Features</a></li>
+        <li class="pure-menu-item indent"><a href="#line-break" class="pure-menu-link">Line breaking</a></li>
+        <li class="pure-menu-item indent"><a href="#selectors" class="pure-menu-link">Query selectors</a></li>
+        <li class="pure-menu-item indent"><a href="#hyphenation" class="pure-menu-link">Hyphenation</a></li>
+        <li class="pure-menu-item indent"><a href="#viewport" class="pure-menu-link">Viewport changes</a></li>
+        <li class="pure-menu-item indent"><a href="#tag-support" class="pure-menu-link">Tag support</a></li>
+        <li class="pure-menu-item indent"><a href="#settings" class="pure-menu-link">Settings</a></li>
+        <li class="pure-menu-item indent"><a href="#quality" class="pure-menu-link">Quality</a></li>
+        <li class="pure-menu-item indent"><a href="#performance" class="pure-menu-link">Performance</a></li>
+</ul>
+
+<h2 id="install">
+<a href="#install" aria-hidden="true" class="anchor" id="user-content-table-of-contents"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>
+Install
+</h2>
+
+<h3 id="npm">NPM</h3>
 {% highlight bash %}
 # Install
 $ npm install typesetbot
@@ -85,7 +111,7 @@ $ npm install typesetbot
 $ npm install hypher hyphenation.en-us
 {% endhighlight %}
 
-<h3>CDN</h3>
+<h3 id="cdn">CDN</h3>
 {% highlight html %}
 <link rel="stylesheet" href="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.min.css">
 <script type="text/javascript" src="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.js"></script>
@@ -97,17 +123,15 @@ $ npm install hypher hyphenation.en-us
 <script type="text/javascript" src="https://cdn.rawgit.com/bramstein/hyphenation-patterns/dc01d58a/dist/browser/en-us.js"></script>
 {% endhighlight %}
 
-<h2>License</h2>
+<h2 id="license"><a href="#license" aria-hidden="true" class="anchor" id="user-content-table-of-contents"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>License</h2>
 
-<h3>Commercial license</h3>
+<h3 id="commercial">Commercial license</h3>
+<p>If you want to use TypesetBot to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. If you want to purchase a TypesetBot Commercial License contact: mgapcdev@gmail.com</p>
 
-If you want to use TypesetBot to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. If you want to purchase a TypesetBot Commercial License contact: mgapcdev@gmail.com
+<h3 id="open-source">Open source license</h3>
+<p>If you are creating an open source application under a license compatible with the [GNU GPL license v3](https://www.gnu.org/licenses/gpl-3.0.html), you may use TypesetBot under the terms of the GPLv3.</p>
 
-<h3>Open source license</h3>
-
-If you are creating an open source application under a license compatible with the [GNU GPL license v3](https://www.gnu.org/licenses/gpl-3.0.html), you may use TypesetBot under the terms of the GPLv3.
-
-<h2>Basic usage</h2>
+<h2 id="basic-usage"><a href="#basic-usage" aria-hidden="true" class="anchor" id="user-content-table-of-contents"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Basic usage</h2>
 {% highlight html %}
 <html>
 <head>
@@ -126,30 +150,30 @@ If you are creating an open source application under a license compatible with t
 </html>
 {% endhighlight %}
 
-Your browser uses a very simple line breaking algorithm to arrange the text on your screen, TypesetBot changes this arrangement using am algorithm inspired by TeX's total-fit algorithm. TypesetBot looks at all the lines in your paragraph and finds the best line breaks for all of them. This process reduces whitespace between words and applies hyphenations only when necessary, so the text becomes more readable.
+<p>Your browser uses a very simple line breaking algorithm to arrange the text on your screen, TypesetBot changes this arrangement using am algorithm inspired by TeX's total-fit algorithm. TypesetBot looks at all the lines in your paragraph and finds the best line breaks for all of them. This process reduces whitespace between words and applies hyphenations only when necessary, so the text becomes more readable.
 
-TypesetBot is designed with the web in mind: written in JavaScript for wide support, query selector to only typeset the correct elements, recalculates the typesetting when the viewport size changes, support for inline tags, easy installs with CDN and NPM, hyphenation for 39 languages.
+TypesetBot is designed with the web in mind: written in JavaScript for wide support, query selector to only typeset the correct elements, recalculates the typesetting when the viewport size changes, support for inline tags, easy installs with CDN and NPM, hyphenation for 39 languages.</p>
 
-<h2>Features</h2>
-<h3>Line breaking</h3>
-The line breaking algorithm implemented, is inspired by TeX's implementation of the total-fit algorithm. The algorithm was detailed in the <a href="https://www.amazon.com/Digital-Typography-Lecture-Notes-Donald-ebook/dp/B01MQGA5KF/ref=mt_kindle?_encoding=UTF8&me=" target="_blank">Digital Typography by Donald Knuth</a>.
-The implementation was modified to make better sense in the web domain. This required some rethinking some fundamentatal elements of the algorithm we get: use of query selectors,  html inline-tag support, handle viewport changes and feeding preprocessed data.
+<h2 id="features"><a href="#features" aria-hidden="true" class="anchor" id="user-content-table-of-contents"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Features</h2>
+<h3 id="line-break">Line breaking</h3>
+<p>The line breaking algorithm implemented, is inspired by TeX's implementation of the total-fit algorithm. The algorithm was detailed in the <a href="https://www.amazon.com/Digital-Typography-Lecture-Notes-Donald-ebook/dp/B01MQGA5KF/ref=mt_kindle?_encoding=UTF8&me=" target="_blank">Digital Typography by Donald Knuth</a>.
+The implementation was modified to make better sense in the web domain. This required some rethinking some fundamentatal elements of the algorithm we get: use of query selectors,  html inline-tag support, handle viewport changes and feeding preprocessed data.</p>
 
-<h3>Query selectors</h3>
-TypesetBot only work on paragraph elements (<span class="inline-code">{% highlight html %}<p>{% endhighlight %}</span>). TypesetBot doesn't have to change your entire website, using query selectors like found in jQuery to select a single paragraph or a bigger selector to typeset multiple paragraphs.
-Using 'body' you can typeset all paragraphs on a page or '.content' to find all paragraphs within the content class.
+<h3 id="selectors">Query selectors</h3>
+<p>TypesetBot only work on paragraph elements (<span class="inline-code">{% highlight html %}<p>{% endhighlight %}</span>). TypesetBot doesn't have to change your entire website, using query selectors like found in jQuery to select a single paragraph or a bigger selector to typeset multiple paragraphs.
+Using 'body' you can typeset all paragraphs on a page or '.content' to find all paragraphs within the content class.</p>
 
-<h3>Hyphenation</h3>
-TypesetBot don't require the use of hyphenation libraries, but hyphenation of words can be used to greatly improve the line breaking quality. Hyphenation is done with <a href="https://github.com/bramstein/hypher" target="_blank">hypher</a> and uses the open source TeX hyphenation patterns and can hyphenate text in various languages. Languages supported can be found in <a href="https://github.com/bramstein/hyphenation-patterns/tree/master/dist/browser" target="_blank">hyphenation-patterns by bramstein</a>.
+<h3 id="hyphenation">Hyphenation</h3>
+<p>TypesetBot don't require the use of hyphenation libraries, but hyphenation of words can be used to greatly improve the line breaking quality. Hyphenation is done with <a href="https://github.com/bramstein/hypher" target="_blank">hypher</a> and uses the open source TeX hyphenation patterns and can hyphenate text in various languages. Languages supported can be found in <a href="https://github.com/bramstein/hyphenation-patterns/tree/master/dist/browser" target="_blank">hyphenation-patterns by bramstein</a>.</p>
 
-<h3>Viewport changes</h3>
-With responsive design being a important thing on the web, I think it only made sense to consider that the user might change the viewport size by dragging the browser or going from portrait to landscape on mobile. When using the _TypesetBot.attach()_ we recalculate the line breaking every time the viewport changes and with some clever CSS the transition is hard to notice.
+<h3 id="viewport">Viewport changes</h3>
+<p>With responsive design being a important thing on the web, I think it only made sense to consider that the user might change the viewport size by dragging the browser or going from portrait to landscape on mobile. When using the _TypesetBot.attach()_ we recalculate the line breaking every time the viewport changes and with some clever CSS the transition is hard to notice.</p>
 
-<h3>Tag support</h3>
-On of the biggest changes that had to be made from the total-fit algorithm, is the support for inline tags in paragraphs. The support allows the user to wrap text in style changing tags like <span class="inline-code">{% highlight html %}<span>{% endhighlight %}</span> or <span class="inline-code">{% highlight html %}<b class="someClass">{% endhighlight %}</span> these can be used as you would expect, even in the middle of a word and with styles that change the font-size.
+<h3 id="tag-support">Tag support</h3>
+<p>On of the biggest changes that had to be made from the total-fit algorithm, is the support for inline tags in paragraphs. The support allows the user to wrap text in style changing tags like <span class="inline-code">{% highlight html %}<span>{% endhighlight %}</span> or <span class="inline-code">{% highlight html %}<b class="someClass">{% endhighlight %}</span> these can be used as you would expect, even in the middle of a word and with styles that change the font-size.</p>
 
-<h3>Settings</h3>
-TypesetBot has been made to be very adjustable as there is no perfect settings. Some of these settings can increase the performance and behavior so it's important to expose these to the user.
+<h3 id="settings">Settings</h3>
+<p>TypesetBot has been made to be very adjustable as there is no perfect settings. Some of these settings can increase the performance and behavior so it's important to expose these to the user.</p>
 {% highlight javascript unknown %}
 {
     // Algorithm.
@@ -224,79 +248,80 @@ TypesetBot has been made to be very adjustable as there is no perfect settings. 
 }
 {% endhighlight %}
 
-<h3>Performance</h3>
-
-<h3>Quality</h3>
-The easiest way to compare quality of the typesetting is to look at the adjustment ratios that indecates how tight or loose a line is. Ideally we this value to be zero so the word-spacing is exactly 1/3 em, plain HTML can only increase word-spacing is necesarry, while TypesetBot can both increase and decrease it. The point is to degrace visual impact, so we strongly prefer to have 2 ratios of value 1, over having 1 ratio of 2 and 1 ratio of 0. TypesetBot even tries to minizing the jump between a loose line and tight line.
+<h3 id="quality">Quality</h3>
+<p>The easiest way to compare quality of the typesetting is to look at the adjustment ratios that indecates how tight or loose a line is. Ideally we this value to be zero so the word-spacing is exactly 1/3 em, plain HTML can only increase word-spacing is necesarry, while TypesetBot can both increase and decrease it. The point is to degrace visual impact, so we strongly prefer to have 2 ratios of value 1, over having 1 ratio of 2 and 1 ratio of 0. TypesetBot even tries to minizing the jump between a loose line and tight line.
 
 Normal HTML has an easier time line breaking on wider lines, but on smaller viewports it starts to fall apart, so we can see how this is affected as multiple viewports.
 
-Reference: <a href="https://codepen.io/MGApcDev/pen/YxoaWe" target="_blank">here</a>
-<h4>900px wide</h4>
-<p align="center">
-    <img alt="Quick Example" src="http://i.imgur.com/HHBbtmF.gif">
-</p>
-
-<h4>500px wide</h4>
-<p align="center">
-    <img alt="Quick Example" src="http://i.imgur.com/GTyyZ1a.gif">
-</p>
-
-<h4>200px wide</h4>
-<p align="center">
-    <img alt="Quick Example" src="http://i.imgur.com/SUpnELJ.gif">
+Reference: <a href="https://codepen.io/MGApcDev/pen/LeeEzQ" target="_blank">here</a>
 </p>
 
 <main>
 
   <input id="tab1" type="radio" name="tabs" >
-  <label for="tab1" class="quali-tabs">Desktop</label>
+  <label for="tab1" class="quali-tabs">Desktop (900px)</label>
 
   <input id="tab2" type="radio" name="tabs" checked>
-  <label for="tab2" class="quali-tabs">Tablet</label>
+  <label for="tab2" class="quali-tabs">Tablet (500px)</label>
 
   <input id="tab3" type="radio" name="tabs">
-  <label for="tab3" class="quali-tabs">Mobile</label>
+  <label for="tab3" class="quali-tabs">Mobile (200px)</label>
 
   <section id="content1">
+      <p>In this example the website has a lot
+      of space to reduce the adjustment ratio, so the standard HTML gets pretty good results of an average 0.5, but
+      the worst ratio is still 1.7 which is not very good, as explained because we prefer to have consistently low ratios
+      and even if it’s only a single line, that line will stand out because it appears to have a white box rather than a
+      big space. In this case TypesetBot doesn’t need to hyphen any words and therefore justified and ragged finds the
+      same solution. An average of -0.16 is very good as be aim for 0 and unlike the standard implementation the max
+      and min also stays closer to zero with a max of 0.3 and min of -0.8, but this is a lot better than 1.7 from plain
+      HTML</p>
       <div class="carousel">
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
+        <div class="carousel-cell"><img src="/assets/project/typesetbot/quality/900px-view.png"></div>
+        <div class="carousel-cell"><img src="/assets/project/typesetbot/quality/900px-graph.png"></div>
+        <div class="carousel-cell"><img src="/assets/project/typesetbot/quality/900px-stat.png"></div>
       </div>
   </section>
 
   <section id="content2">
+      <p>The second we have figure 15 and a viewport of 500px, this is very commonly used on websites with a 2/3
+layout54. With this we begin to see the real advantages of TypesetBot, the average of normal HTML moves up
+to 1.25 which is decent, but the max moves up to 3.2 which is very visible while TypesetBot stay on a very low
+average of 0.1, and the max and min only increasing a bit to 0.8 and -0.8. This is also where we see the difference
+between justified and ragged, the justified implementation has better ratios, but the ragged has only 1 hyphen
+over 43 lines, compared to 5 over 43, which is about 1 every 8 lines. Even with the ragged implementation all
+ratios are significantly better than the normal HTML implementation.</p>
       <div class="carousel">
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
+          <div class="carousel-cell"><img src="/assets/project/typesetbot/quality/500px-view.png"></div>
+          <div class="carousel-cell"><img src="/assets/project/typesetbot/quality/500px-graph.png"></div>
+          <div class="carousel-cell"><img src="/assets/project/typesetbot/quality/500px-stat.png"></div>
       </div>
   </section>
 
   <section id="content3">
+      <p>The third example, which is a viewport of 200px, this is usually not a preferable text width,
+      but is inevitable for text with overlapping images and on mobile devices. In this case we see very significant
+      improvements. Here the average ratio for normal HTML has jumped to 3.8 and the max is a staggering 16.2,
+      for TypesetBot the average is still good at around 1 for both ragged and justified, but even TypesetBot has
+      a max of 4.9 which is bad. Part of how TypesetBot is able to get so good results is the hyphenation where both justified and ragged hyphened nearly half the lines, but this is a trade-off that the program algorithm
+implemented is willing to make. One thing to note is that TypesetBot saved 8 lines, which is a good side-effect
+of the hyphenation.</p>
       <div class="carousel">
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
-        <div class="carousel-cell"></div>
+          <div class="carousel-cell"><img src="/assets/project/typesetbot/quality/200px-view.png"></div>
+          <div class="carousel-cell"><img src="/assets/project/typesetbot/quality/200px-graph.png"></div>
+          <div class="carousel-cell"><img src="/assets/project/typesetbot/quality/200px-stat.png"></div>
       </div>
   </section>
 
 </main>
 
-<h3>Execution time</h3>
-TypesetBot constructs a list of objects for each paragraph on the first run, the list contains information for every word and hyphenation in the paragraph, so it's an expensive task, but only occurs on a new page load.
+<h3 id="performance">Performance</h3>
+<p>TypesetBot constructs a list of objects for each paragraph on the first run, the list contains information for every word and hyphenation in the paragraph, so it's an expensive task, but only occurs on a new page load.
 The second run occurs when the users adjusts the viewport and all the linebreaking and additional hyphenations needs to be calculated.
 
-Reference: <a href="http://codepen.io/MGApcDev/pen/QvOpeq" target="_blank">here</a>
-<h4>Performance examples</h4>
+Reference: <a href="http://codepen.io/MGApcDev/pen/QvOpeq" target="_blank">here</a></p>
 
+<h4>Performance examples</h4>
 <table class="pure-table">
     <thead>
         <tr>
@@ -350,7 +375,6 @@ Reference: <a href="http://codepen.io/MGApcDev/pen/QvOpeq" target="_blank">here<
 </div>
 
 <script>
-
 // Event handler for re-runing typesetbot.
 var selector = '.panel-left';
 var rtime;

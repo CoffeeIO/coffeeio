@@ -86,6 +86,7 @@ main {
 section {
     position: absolute;
     opacity: 0;
+    z-index: -1;
     padding: 20px 0 0;
     border-top: 1px solid #ddd;
 }
@@ -131,6 +132,7 @@ input:checked + label {
 #tab3:checked ~ #content3 {
     position: relative;
     opacity: 1;
+    z-index: 1;
     transition: all ease 0.2s;
 }
 
@@ -158,20 +160,13 @@ input:checked + label {
 }
 
 .carousel-cell {
-    width: 66%;
-    height: 200px;
+    width: 750px;
+    height: 421px;
     margin-right: 10px;
-    background: #8C8;
     border-radius: 5px;
-    counter-increment: carousel-cell;
 }
 
 /* cell number */
 .carousel-cell:before {
-    display: block;
-    text-align: center;
-    content: counter(carousel-cell);
-    line-height: 200px;
-    font-size: 80px;
-    color: white;
+
 }

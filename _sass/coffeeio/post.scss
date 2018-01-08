@@ -17,3 +17,36 @@ code {
         }
     }
 }
+h2 {
+    margin-top: 10px;
+    &:hover .anchor {
+        visibility: visible;
+    }
+}
+
+.anchor {
+    float: left;
+    padding-right: 4px;
+    margin-left: -20px;
+    line-height: 36px;
+    vertical-align: middle;
+    visibility: hidden;
+    &:hover {
+        visibility: visible;
+    }
+}
+@include respond-to(max) {
+    .table-of-contents {
+        position: fixed;
+        top: 0;
+        right: 0;
+        margin: 20px;
+        width: 160px;
+    }
+}
+
+
+.pure-menu-item.indent {
+    margin-left: 20px;
+    font-size: 12px;
+}
