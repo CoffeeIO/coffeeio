@@ -23,7 +23,6 @@ h2, h3 {
         visibility: visible;
     }
 }
-
 .anchor {
     float: left;
     padding-right: 4px;
@@ -35,17 +34,60 @@ h2, h3 {
         visibility: visible;
     }
 }
-@include respond-to(max) {
-    .table-of-contents {
-        position: fixed;
-        top: 0;
-        right: 0;
-        margin: 20px;
-        width: 160px;
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    &.burger {
+        a {
+            font-size: 27px;
+            color: $color-white;
+            border-radius: 10px;
+            border: 2px solid $color-white;
+            background-color: #232425;
+            padding: 2px 10px;
+            float: right;
+            text-decoration: none;
+        }
+        @include clearfix;
+        @include respond-to(max) {
+            display: none;
+        }
     }
 }
 
+// Sidebar TOC.
+.table-of-contents {
+    margin-top: 71px;
+    background-color: #232425;
+    border-radius: 10px;
+    border: 2px solid $color-white;
+    a {
+        color: $color-white;
+        &:hover {
+            background: none;
+            text-decoration: underline;
+        }
+    }
+    max-height: 1000px;
+    overflow-y: hidden;
+    transition: max-height 0.5s, border 0s;
+    transition-timing-function: ease-in-out;
+    @include respond-to(max) {
+        margin: 20px;
+    }
+    &.closed {
+        max-height: 0;
+        border: 0px solid $color-white;
+        transition: max-height 0.5s, border 0s ease 0.5s;
+        @include respond-to(max) {
+            max-height: 1000px;
+        }
+    }
+}
 
+// }
 .pure-menu-item.indent {
     margin-left: 20px;
     font-size: 12px;

@@ -62,18 +62,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 h1 {
     padding: 50px 0;
     font-weight: 400;
     text-align: center;
 }
-
 p {
     margin: 0 0 20px;
     line-height: 1.5;
 }
-
 main {
     min-width: 320px;
     max-width: 800px;
@@ -82,7 +79,6 @@ main {
     margin: 0 auto;
     background: #fff;
 }
-
 section {
     position: absolute;
     opacity: 0;
@@ -90,11 +86,9 @@ section {
     padding: 20px 0 0;
     border-top: 1px solid #ddd;
 }
-
 input {
     display: none;
 }
-
 label {
     display: inline-block;
     margin: 0 0 -1px;
@@ -104,29 +98,24 @@ label {
     color: #bbb;
     border: 1px solid transparent;
 }
-
 label:before {
     font-family: fontawesome;
     font-weight: normal;
     margin-right: 10px;
 }
-
 label[for*='1']:before { content: '\f108'; }
 label[for*='2']:before { content: '\f10a'; }
 label[for*='3']:before { content: '\f10b'; }
-
 label:hover {
     color: #888;
     cursor: pointer;
 }
-
 input:checked + label {
     color: #555;
     border: 1px solid #ddd;
     border-top: 2px solid orange;
     border-bottom: 1px solid #fff;
 }
-
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2,
 #tab3:checked ~ #content3 {
@@ -135,7 +124,6 @@ input:checked + label {
     z-index: 1;
     transition: all ease 0.2s;
 }
-
 @media screen and (max-width: 650px) {
     label {
         font-size: 0;
@@ -145,7 +133,6 @@ input:checked + label {
         font-size: 18px;
     }
 }
-
 @media screen and (max-width: 400px) {
     label {
         padding: 15px;
@@ -154,19 +141,12 @@ input:checked + label {
 
 /////////////// flickity
 * { box-sizing: border-box; }
-
 .carousel {
     background: #EEE;
 }
-
 .carousel-cell {
     width: 750px;
     height: 421px;
     margin-right: 10px;
     border-radius: 5px;
-}
-
-/* cell number */
-.carousel-cell:before {
-
 }
