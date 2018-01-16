@@ -1,0 +1,19 @@
+{
+  "name": "coffeeio",
+  "version": "1.0.0",
+  "description": "See what is being worked on: [![Waffle.io - Columns and their card count](https://badge.waffle.io/CoffeeIO/coffeeio.svg?columns=all)](http://waffle.io/CoffeeIO/coffeeio)",
+  "dependencies": {
+    "css-element-queries": "^0.4.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoffeeIO/coffeeio.git"
+  },
+  "author": "CoffeeIO",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CoffeeIO/coffeeio/issues"
+  },
+  "homepage": "http://coffeeio.com"
+}

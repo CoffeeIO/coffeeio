@@ -1,0 +1,153 @@
+.typesetbot-header {
+    text-align: center;
+    @include clearfix;
+}
+.typesetbot-title {
+    display: inline-block;
+    margin: 30px 30px 0 30px;
+    vertical-align: middle;
+}
+.typesetbot-logo {
+    display: inline-block;
+    margin: 5px;
+}
+
+.pure-table {
+    margin: 0 auto;
+}
+
+/* https://codepen.io/rstrahl/pen/eJZQej */
+/* horizontal panel*/
+.panel-container {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid silver;
+    overflow: hidden;
+    /* avoid browser level touch actions */
+    xtouch-action: none;
+}
+.panel-left {
+    flex: 0 0 auto;
+    padding: 10px;
+    width: calc(100% - 300px);
+    min-height: 200px;
+    max-width: 100%;
+    min-width: 150px;
+}
+.splitter {
+    flex: 0 0 auto;
+    width: 18px;
+    background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #9a9a9a;
+    min-height: 200px;
+    cursor: col-resize;
+}
+.panel-right {
+    flex: 1 1 auto;
+    background: rgb(29, 31, 32);
+    pre {
+        border: none;
+        border-radius: initial;
+    }
+    h3 {
+        margin: 10px;
+        color: #fff;
+    }
+}
+
+///////////////// Tabs
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1 {
+    padding: 0;
+    font-weight: 400;
+    text-align: center;
+}
+p {
+    margin: 0 0 20px;
+    line-height: 1.5;
+}
+main {
+    min-width: 320px;
+    max-width: 800px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+    background: #fff;
+}
+section {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    padding: 20px 0 0;
+    border-top: 1px solid #ddd;
+}
+input {
+    display: none;
+}
+label {
+    display: inline-block;
+    margin: 0 0 -1px;
+    padding: 15px 25px;
+    font-weight: 600;
+    text-align: center;
+    color: #bbb;
+    border: 1px solid transparent;
+}
+label:before {
+    font-family: fontawesome;
+    font-weight: normal;
+    margin-right: 10px;
+}
+label[for*='1']:before { content: '\f108'; }
+label[for*='2']:before { content: '\f10a'; }
+label[for*='3']:before { content: '\f10b'; }
+label:hover {
+    color: #888;
+    cursor: pointer;
+}
+input:checked + label {
+    color: #555;
+    border: 1px solid #ddd;
+    border-top: 2px solid orange;
+    border-bottom: 1px solid #fff;
+}
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3 {
+    position: relative;
+    opacity: 1;
+    z-index: 1;
+    transition: all ease 0.2s;
+}
+@media screen and (max-width: 650px) {
+    label {
+        font-size: 0;
+    }
+    label:before {
+        margin: 0;
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 400px) {
+    label {
+        padding: 15px;
+    }
+}
+
+/////////////// flickity
+* { box-sizing: border-box; }
+.carousel {
+    background: #EEE;
+}
+.carousel-cell {
+    width: 750px;
+    height: 421px;
+    margin-right: 10px;
+    border-radius: 5px;
+}

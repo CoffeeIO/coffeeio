@@ -16,6 +16,17 @@ h1 {
         font-size: 6em;
     }
 }
+.content-icon {
+    margin-left: 10px;
+    height: 24px;
+}
+.pure-button-primary {
+    color: $color-white;
+    &:visited {
+        color: $color-white;
+    }
+}
+
 .wrapper {
     padding: 0 5px;
     max-width: calc(1000px);

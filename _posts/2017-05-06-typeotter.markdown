@@ -1,5 +1,6 @@
 ---
 layout: post
+type: "article"
 title:  "TypeOtter (inactive)"
 desc: "TypeOtter is a Javascript library that allows html to be rendered with high quality typesetting in html and pdf."
 date:   2017-05-06 12:00:00 +0100

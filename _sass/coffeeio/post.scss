@@ -5,3 +5,112 @@ code {
         word-wrap: break-word;
     }
 }
+.inline-code {
+    display: inline-block;
+    figure {
+        margin: 0;
+        padding: 0;
+        pre {
+            margin: 0;
+            padding: 0;
+            overflow: inherit;
+        }
+    }
+}
+h2 {
+    margin-top: 30px;
+}
+h3 {
+    margin-top: 10px;
+}
+h2, h3 {
+    &:hover .anchor {
+        visibility: visible;
+    }
+}
+.anchor {
+    float: left;
+    padding-right: 4px;
+    margin-left: -20px;
+    line-height: 36px;
+    vertical-align: middle;
+    visibility: hidden;
+    &:hover {
+        visibility: visible;
+    }
+}
+.navbar {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    &.burger {
+        a {
+            font-size: 27px;
+            color: $color-white;
+            border-radius: 10px;
+            border: 2px solid $color-white;
+            background-color: #232425;
+            padding: 2px 10px;
+            float: right;
+            text-decoration: none;
+        }
+        @include clearfix;
+        @include respond-to(max) {
+            display: none;
+        }
+    }
+}
+
+// Sidebar TOC.
+.table-of-contents {
+    z-index: 10;
+    margin-top: 71px;
+    background-color: #232425;
+    border-radius: 10px;
+    border: 2px solid $color-white;
+    a {
+        color: $color-white;
+        &:hover {
+            background: none;
+            text-decoration: underline;
+        }
+    }
+    max-height: 1000px;
+    overflow-y: hidden;
+    transition: max-height 0.5s, border 0s;
+    transition-timing-function: ease-in-out;
+    @include respond-to(max) {
+        margin: 20px;
+    }
+    &.closed {
+        max-height: 0;
+        border: 0px solid $color-white;
+        transition: max-height 0.5s, border 0s ease 0.5s;
+        @include respond-to(max) {
+            max-height: 1000px;
+        }
+    }
+}
+.pure-menu-item.indent {
+    margin-left: 20px;
+    font-size: 14px;
+}
+.post-wide {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    @include respond-to(medium) {
+        margin: 20px 75px 30px;
+    }
+    p {
+        line-height: 1.8;
+    }
+}
+figure {
+    margin: 0;
+    @include respond-to(medium) {
+        margin: 1em 40px;
+    }
+}
