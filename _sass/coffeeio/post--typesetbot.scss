@@ -1,9 +1,10 @@
 .typesetbot-header {
     text-align: center;
+    @include clearfix;
 }
 .typesetbot-title {
     display: inline-block;
-    margin: 30px;
+    margin: 30px 30px 0 30px;
     vertical-align: middle;
 }
 .typesetbot-logo {
@@ -63,7 +64,7 @@
     box-sizing: border-box;
 }
 h1 {
-    padding: 50px 0;
+    padding: 0;
     font-weight: 400;
     text-align: center;
 }

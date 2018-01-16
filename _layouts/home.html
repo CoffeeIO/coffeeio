@@ -8,6 +8,7 @@ layout: default
 
     <ul class="post-list">
         {% for post in site.posts %}
+        {% if post.type == 'article' %}
         <div class="front-post">
             <div class="front-post-display">
                 {% if post.snippet-type == 'image' %}
@@ -27,7 +28,7 @@ layout: default
             </div>
 
         </div>
-
+        {% endif %}
         {% endfor %}
     </ul>
 
