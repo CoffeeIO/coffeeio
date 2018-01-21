@@ -5,6 +5,7 @@ title:  "TypesetBot"
 desc: "Small project to dynamically typeset text on the web."
 date:   2017-10-06 12:00:00 +0100
 permalink: typesetbot-get-started
+
 ---
 <link rel="stylesheet" href="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
@@ -88,9 +89,7 @@ $ npm install hypher hyphenation.en-us
 <h2 id="license">License</h2>
 
 <h3 id="commercial">Commercial license</h3>
-<p>If you want to use TypesetBot to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary.</p>
-<script src="https://gumroad.com/js/gumroad.js"></script>
-<a class="gumroad-button" href="https://gum.co/TypesetBot" target="_blank">Buy subscription license on Gumroad</a>
+<p>If you want to use TypesetBot to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. If you want to purchase a TypesetBot Commercial License contact: mgapcdev@gmail.com</p>
 
 <h3 id="open-source">Open source license</h3>
 <p>If you are creating an open source application under a license compatible with the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL license v3</a>, you may use TypesetBot under the terms of the GPLv3.</p>
@@ -144,7 +143,7 @@ these can be used as you would expect, even in the middle of a word and with sty
 
 <h3 id="settings">Settings</h3>
 <p>TypesetBot has been made to be very adjustable as there is no perfect settings. Some of these settings can increase the performance and behavior so it's important to expose these to the user.</p>
-{% highlight javascript %}
+{% highlight javascript unknown %}
 {
     // Algorithm.
     alignment: 'justify', // Other options are 'ragged-right', 'ragged-left' and 'ragged-center'
@@ -152,7 +151,7 @@ these can be used as you would expect, even in the middle of a word and with sty
     hyphenPenalty: 50, // Penalty for line-breaking on a hyphen
     hyphenPenaltyRagged: 500, // Penalty for line-breaking on a hyphen when using ragged text
     flagPenalty: 3000, // Penalty when current and last line had flag value 1. Reffered to as 'α'
-    fitnessClassDemerit: 3000, // Penalty when switching between ratio classes. Reffered to as 'γ'
+    fitnessClassD   emerit: 3000, // Penalty when switching between ratio classes. Reffered to as 'γ'
     demeritOffset: 1, // Offset to prefer fewer lines by increasing demerit of "~zero badness lines"
 
     // "the value of q is increased by 1 (if q < 0) or decreased by 1 (if q > 0) until a feasible solution is
@@ -296,11 +295,10 @@ Reference: <a href="http://codepen.io/MGApcDev/pen/QvOpeq" target="_blank">here<
     <thead>
         <tr>
             <th>Description</th>
-            <th>First run</th>
-            <th>Second run</th>
+            <th>Initialize</th>
+            <th>Viewport change</th>
         </tr>
     </thead>
-
     <tbody>
         <tr>
             <td>1 paragraph, 441 words, w. hyphenation</td>
@@ -400,6 +398,7 @@ $carousel = $('.carousel').flickity({
 $('.quali-tabs').on('click', function() {
     setTimeout(function () {
         $carousel.flickity('resize');
+        TypesetBot.run('.typesetbot-quali');
     }, 10);
 });
 
