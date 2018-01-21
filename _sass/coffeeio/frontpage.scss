@@ -66,3 +66,19 @@
         }
     }
 }
+.post-list hr{
+    margin-bottom: 20px;
+    @include respond-to(medium) {
+        margin-bottom: 0;    
+    }
+}
+.front-post-wide {
+    @include respond-to(medium) {
+        .front-post-desc {
+            width: calc(40% - 12px);
+        }
+        .front-post-display {
+            width: calc(60% - 12px);
+        }
+    }
+}

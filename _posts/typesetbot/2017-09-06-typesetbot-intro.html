@@ -6,12 +6,16 @@ desc: "Small project to dynamically typeset text on the web."
 date:   2017-10-06 12:00:00 +0100
 snippet-type: image
 snippet: https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png
+permalink: typesetbot
 ---
 <link rel="stylesheet" href="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.min.css">
 <script type="text/javascript" src="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.rawgit.com/bramstein/hypher/v0.2.5/dist/jquery.hypher.js"></script>
 <script type="text/javascript" src="https://cdn.rawgit.com/bramstein/hyphenation-patterns/dc01d58a/dist/browser/en-us.js"></script>
+
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 <header class="post-header typesetbot-header">
@@ -44,9 +48,9 @@ snippet: https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png
     <h2>Make your web text look professional, without hiring a professional typesetter.</h2>
 </div>
 <ul class="post-list">
-    <div class="front-post">
+    <div class="front-post front-post-wide">
         <div class="front-post-display">
-            <img src="/assets/project/typesetbot/features/device.png" >
+            <img src="/assets/project/typesetbot/pitch/device.png" >
         </div>
         <div class="front-post-desc">
             <li>
@@ -55,31 +59,36 @@ snippet: https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png
             </li>
         </div>
     </div>
-    <div class="front-post">
+    <div class="front-post front-post-wide">
+        <hr>
         <div class="front-post-display">
-            <img src="/assets/project/typesetbot/features/hyphen.png" >
+            <img src="/assets/project/typesetbot/pitch/hyphen.png" >
         </div>
         <div class="front-post-desc">
             <li>
                 <h2>Hyphenation</h2>
-                <p>TypesetBot uses a hyphenation algorithm, so words are only hyphenated if it improves the overall look of the text. Currently there is support for hyphenation in 38 different languages.</p>
+                <p>TypesetBot uses a hyphenation algorithm, so words are only hyphenated if it improves the overall look of the text. Currently there is support for hyphenation in 39 different languages.</p>
             </li>
         </div>
     </div>
-    <div class="front-post">
+    <div class="front-post front-post-wide">
+        <hr>
+
         <div class="front-post-display">
-            <img src="/assets/project/typesetbot/features/ragged.png" >
+            <img src="/assets/project/typesetbot/pitch/smart-lines.png" >
         </div>
         <div class="front-post-desc">
             <li>
                 <h2>Smart line algorithm</h2>
-                <p>TypesetBot's algorithm figures out the best layout, so text doesn't jump from short to long lines.</p>
+                <p>TypesetBot's algorithm figures out the best layout, so the text doesn't jump from short to long lines.</p>
             </li>
         </div>
     </div>
-    <div class="front-post">
+    <div class="front-post front-post-wide">
+        <hr>
+
         <div class="front-post-display">
-            <img src="/assets/project/typesetbot/features/setting.png" >
+            <img src="/assets/project/typesetbot/pitch/settings.png" >
         </div>
         <div class="front-post-desc">
             <li>
@@ -101,5 +110,18 @@ snippet: https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png
 </article>
 
 <script charset="utf-8">
-TypesetBot.attach('.front-post');
+TypesetBot.attach('.front-post', {alignment: 'ragged-right'});
+
+window.sr = ScrollReveal();
+sr.reveal('.front-post', {
+    delay: 100,
+    viewFactor: 1.0,
+    scale: 1,
+});
+
+sr.reveal('.post-wide', {
+    delay: 100,
+    viewFactor: 1.0,
+    scale: 1,
+});
 </script>

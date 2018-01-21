@@ -4,6 +4,7 @@ type: "docs"
 title:  "TypesetBot"
 desc: "Small project to dynamically typeset text on the web."
 date:   2017-10-06 12:00:00 +0100
+permalink: typesetbot-get-started
 ---
 <link rel="stylesheet" href="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
@@ -58,7 +59,7 @@ TypesetBot.attach(
     <a href="#" onclick="return false;">☰</a>
 </div>
 <ul class="pure-menu-list navbar table-of-contents closed">
-    
+
 </ul>
 <div class="content-inner">
 <h2 id="install">Install</h2>
@@ -87,7 +88,9 @@ $ npm install hypher hyphenation.en-us
 <h2 id="license">License</h2>
 
 <h3 id="commercial">Commercial license</h3>
-<p>If you want to use TypesetBot to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. If you want to purchase a TypesetBot Commercial License contact: mgapcdev@gmail.com</p>
+<p>If you want to use TypesetBot to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary.</p>
+<script src="https://gumroad.com/js/gumroad.js"></script>
+<a class="gumroad-button" href="https://gum.co/TypesetBot" target="_blank">Buy subscription license on Gumroad</a>
 
 <h3 id="open-source">Open source license</h3>
 <p>If you are creating an open source application under a license compatible with the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL license v3</a>, you may use TypesetBot under the terms of the GPLv3.</p>
@@ -141,7 +144,7 @@ these can be used as you would expect, even in the middle of a word and with sty
 
 <h3 id="settings">Settings</h3>
 <p>TypesetBot has been made to be very adjustable as there is no perfect settings. Some of these settings can increase the performance and behavior so it's important to expose these to the user.</p>
-{% highlight javascript unknown %}
+{% highlight javascript %}
 {
     // Algorithm.
     alignment: 'justify', // Other options are 'ragged-right', 'ragged-left' and 'ragged-center'
