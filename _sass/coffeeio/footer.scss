@@ -1,0 +1,31 @@
+.site-footer {
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+            color: $color-font;
+        }
+    }
+    .wrapper {
+        height: 32px;
+    }
+}
+.footer-heading {
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0;
+}
+.footer-heading-logo {
+    margin-right: 10px;
+}
+.footer-social {
+    float: right;
+}
+.footer-social-icon {
+    margin-left: 10px;
+    img {
+        height: 32px;
+    }
+}

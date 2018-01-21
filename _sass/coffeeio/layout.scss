@@ -1,0 +1,102 @@
+.post-meta {
+    display: none;
+}
+.post-list {
+    margin: 0 10px 25px 10px;
+    &.hidden-hr {
+        @include respond-to(medium) {
+            hr {
+                display: none;
+            }
+        }
+        .post-list-item:first-child {
+            hr {
+                display: block;
+            }
+        }
+    }
+    hr {
+        margin-bottom: 20px;
+        @include respond-to(medium) {
+            margin-bottom: 0;
+        }
+    }
+}
+.post-list-item {
+    height: auto;
+    margin-bottom: 35px;
+    border-radius: 6px;
+    width: 100%;
+    @include respond-to(medium) {
+        height: 300px;
+    }
+    @include clearfix;
+    > div {
+        display: inline-block;
+    }
+    &:nth-child(even) {
+        .post-list-item-display {
+            float: right;
+        }
+        .post-list-item-desc {
+            float: left;
+        }
+    }
+    &.wide {
+        @include respond-to(medium) {
+            .post-list-item-desc {
+                width: calc(40% - 12px);
+            }
+            .post-list-item-display {
+                width: calc(60% - 12px);
+            }
+        }
+    }
+}
+.post-list-item-display {
+    float: left;
+    width: 100%;
+    max-height: 100%;
+    img {
+        padding: 10px;
+    }
+    @include respond-to(medium) {
+        @include vertical-align-middle;
+        width: calc(50% - 12px);
+        height: 100%;
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            padding: 0;
+        }
+    }
+}
+.post-list-item-desc {
+    float: right;
+    width: 100%;
+    text-align: center;
+    @include respond-to(medium) {
+        width: calc(50% - 12px);
+        @include vertical-align-middle;
+        text-align: left;
+    }
+}
+.post-wide {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    @include respond-to(medium) {
+        margin: 20px 75px 30px;
+    }
+    p {
+        line-height: 1.8;
+    }
+}
