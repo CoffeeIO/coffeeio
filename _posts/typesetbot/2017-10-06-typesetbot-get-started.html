@@ -155,13 +155,12 @@ these can be used as you would expect, even in the middle of a word and with sty
     hyphenPenalty: 50, // Penalty for line-breaking on a hyphen
     hyphenPenaltyRagged: 500, // Penalty for line-breaking on a hyphen when using ragged text
     flagPenalty: 3000, // Penalty when current and last line had flag value 1. Reffered to as 'α'
-    fitnessClassD   emerit: 3000, // Penalty when switching between ratio classes. Reffered to as 'γ'
+    fitnessClassDemerit: 3000, // Penalty when switching between ratio classes. Reffered to as 'γ'
     demeritOffset: 1, // Offset to prefer fewer lines by increasing demerit of "~zero badness lines"
 
-    // "the value of q is increased by 1 (if q < 0) or decreased by 1 (if q > 0) until a feasible solution is
-    //  found." - DT p.114
+    // "the value of q is increased by 1 (if q < 0) or decreased by 1 (if q > 0) until a feasible solution is found." - DT p.114
     loosenessParam: 0, // If zero we find to solution with fewest total demerits. Reffered to as 'q'
-    absoluteMaxRatio: 5, // Max adjustment ratio before we give up on finding solutions
+    absoluteMaxRatio: 5, // Max adjustment ratio before we giving up on finding solutions
 
     maxRatio: 2, // Maximum acceptable adjustment ratio. Referred to as 'p'
     minRatio: -1, // Minimum acceptable adjustment ratio. Less than -1 will make the text too closely spaced.
@@ -185,29 +184,31 @@ these can be used as you would expect, even in the middle of a word and with sty
 
 
     // Dynamic width.
-
-    // Allow the paragraph to account for overlapping elements, turn this off if you know there's no overlapping
-    // element to gain performance.
+    // Allow the paragraph to account for overlapping elements, turn this off if you know there's no overlapping element to gain performance.
     dynamicWidth: true,
     // Pixel increment of vertical search, higher better performance, lower more accurate result.
     dynamicWidthIncrement: 5,
 
     // Functions.
-    ratio (idealW, actualW, wordCount, shrink, stretch, settings) { // Adjustment ratio
+
+    // Adjustment ratio
+    ratio (idealW, actualW, wordCount, shrink, stretch, settings) {
         if (actualW < idealW) {
             return (idealW - actualW) / ((wordCount - 1) * stretch);
         }
 
         return (idealW - actualW) / ((wordCount - 1) * shrink);
     },
-    badness (ratio, settings) { // Badness calculation
+    // Badness calculation
+    badness (ratio, settings) {
         if (ratio == null || ratio < settings.minRatio) {
             return Infinity;
         }
 
         return 100 * Math.pow(Math.abs(ratio), 3) + 0.5;
     },
-    demerit (badness, penalty, flag, settings) { // Demerit calculation
+    // Demerit calculation
+    demerit (badness, penalty, flag, settings) {
         var flagPenalty = flag ? settings.flagPenalty : 0;
         if (penalty >= 0) {
             return Math.pow(settings.demeritOffset + badness + penalty, 2) + flagPenalty;
@@ -222,9 +223,11 @@ these can be used as you would expect, even in the middle of a word and with sty
 {% endhighlight %}
 <h2 id="performance">Performance</h2>
 <h3 id="quality">Quality</h3>
-<p>The easiest way to compare quality of the typesetting is to look at the adjustment ratios that indecates how tight or loose a line is. Ideally we this value to be zero so the word-spacing is exactly 1/3 em, plain HTML can only increase word-spacing is necesarry, while TypesetBot can both increase and decrease it. The point is to degrace visual impact, so we strongly prefer to have 2 ratios of value 1, over having 1 ratio of 2 and 1 ratio of 0. TypesetBot even tries to minizing the jump between a loose line and tight line.
+<p>The easiest way to compare quality of the typesetting is to look at the adjustment ratios that indecates how tight or loose a line is relative to the number of words in the line. Ideally we this value to be 0 so the word-spacing is exactly 1/3 em with no additional whitespace.
+Plain HTML can only increase word-spacing if necesarry, while TypesetBot can both increase and decrease it.
+The point is to decrease visual impact, so adjustment ratios exponentially scales with the amount of additional whitespace.
 
-Normal HTML has an easier time line breaking on wider lines, but on smaller viewports it starts to fall apart, so we can see how this is affected as multiple viewports.
+Normal HTML has an easier time line breaking on wider lines, but on smaller viewports it starts to fall apart, so we can see how this is affected as multiple viewports. In the example lines with  ratio over 0.5 or lower than -0.5 is highlighted in yellow, and ratios higher than 1.0 is highlighted in red.
 
 Reference: <a href="https://codepen.io/MGApcDev/pen/LeeEzQ" target="_blank">here</a>
 </p>
@@ -242,12 +245,12 @@ Reference: <a href="https://codepen.io/MGApcDev/pen/LeeEzQ" target="_blank">here
 
   <section id="content1">
       <p>In this example the website has a lot
-      of space to reduce the adjustment ratio, so the standard HTML gets pretty good results of an average 0.5, but
+      of space to reduce the adjustment ratio, so the plain HTML gets pretty good results of an average 0.5, but
       the worst ratio is still 1.7 which is not very good, as explained because we prefer to have consistently low ratios
       and even if it’s only a single line, that line will stand out because it appears to have a white box rather than a
       big space. In this case TypesetBot doesn’t need to hyphen any words and therefore justified and ragged finds the
-      same solution. An average of -0.16 is very good as be aim for 0 and unlike the standard implementation the max
-      and min also stays closer to zero with a max of 0.3 and min of -0.8, but this is a lot better than 1.7 from plain
+      same solution. An average of -0.1 is very good and unlike the plain HTML the max
+      and min also stays closer to zero with a max of 0.3 and min of -0.7, but this is a lot better than 1.7 from plain
       HTML</p>
       <div class="carousel">
         <div class="carousel-cell"><img src="/assets/project/typesetbot/quality/900px-view.png"></div>
@@ -257,12 +260,12 @@ Reference: <a href="https://codepen.io/MGApcDev/pen/LeeEzQ" target="_blank">here
   </section>
 
   <section id="content2">
-      <p>The second we have figure 15 and a viewport of 500px, this is very commonly used on websites with a 2/3
-layout54. With this we begin to see the real advantages of TypesetBot, the average of normal HTML moves up
-to 1.25 which is decent, but the max moves up to 3.2 which is very visible while TypesetBot stay on a very low
-average of 0.1, and the max and min only increasing a bit to 0.8 and -0.8. This is also where we see the difference
+      <p>Text width 500px, this is very commonly used on websites where 2/3 of the page is the text content.
+    With this we see the real advantages of TypesetBot, the average ratio of normal HTML moves up
+to 1.25 which is still okay, but the max ratio moves up to 3.2 which is very visible while TypesetBot stay on a very low
+average of 0.1 and the max and min only increasing a bit to 0.8 and -0.8 respectively. This is also where we see the difference
 between justified and ragged, the justified implementation has better ratios, but the ragged has only 1 hyphen
-over 43 lines, compared to 5 over 43, which is about 1 every 8 lines. Even with the ragged implementation all
+over 43 lines, compared to 5 over 43. Even with the ragged implementation all
 ratios are significantly better than the normal HTML implementation.</p>
       <div class="carousel">
           <div class="carousel-cell"><img src="/assets/project/typesetbot/quality/500px-view.png"></div>
@@ -272,13 +275,17 @@ ratios are significantly better than the normal HTML implementation.</p>
   </section>
 
   <section id="content3">
-      <p>The third example, which is a viewport of 200px, this is usually not a preferable text width,
-      but is inevitable for text with overlapping images and on mobile devices. In this case we see very significant
-      improvements. Here the average ratio for normal HTML has jumped to 3.8 and the max is a staggering 16.2,
-      for TypesetBot the average is still good at around 1 for both ragged and justified, but even TypesetBot has
-      a max of 4.9 which is bad. Part of how TypesetBot is able to get so good results is the hyphenation where both justified and ragged hyphened nearly half the lines, but this is a trade-off that the program algorithm
-implemented is willing to make. One thing to note is that TypesetBot saved 8 lines, which is a good side-effect
-of the hyphenation.</p>
+      <p>
+         As the viewport shrinks to 200px, we're at a text width that is not preperable,
+         but this is inevitable for text on mobile devices. In this case we see very significant
+         improvements in all aspects.
+         Here the average ratio for normal HTML has jumped to 3.8 and the max is a staggering 16,
+         for TypesetBot the average is still good at around 1 for both ragged and justified, but even TypesetBot has
+         a max of 4.9, which is not good.
+        Part of how TypesetBot is able to get so good results is the hyphenation, where both justified and ragged hyphened nearly half the lines, but this is a trade-off that the algorithm
+        is willing to make. One thing to note is that TypesetBot saved 8 lines, which is a good side-effect
+       of the hyphenation.
+      </p>
       <div class="carousel">
           <div class="carousel-cell"><img src="/assets/project/typesetbot/quality/200px-view.png"></div>
           <div class="carousel-cell"><img src="/assets/project/typesetbot/quality/200px-graph.png"></div>
@@ -392,7 +399,7 @@ $(".panel-left").resizable({
 TypesetBot.attach('.panel-left');
 
 // Run typesetbot on whole website.
-TypesetBot.attach('.content-inner');
+TypesetBot.attach('.content-inner', { debug: true });
 
 // Add gallery.
 $carousel = $('.carousel').flickity({
