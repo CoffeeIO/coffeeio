@@ -5,7 +5,10 @@
 @import "coffeeio/_syntax-highlighting";
 // Site.
 @import "coffeeio/default";
-@import "coffeeio/frontpage";
+@import "coffeeio/footer";
+@import "coffeeio/tags";
+@import "coffeeio/layout";
 @import "coffeeio/post";
+@import "coffeeio/project";
 // Articles.
 @import "coffeeio/post--typesetbot";

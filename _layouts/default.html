@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
   {% include head.html %}
-
   <body>
-
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}
       </div>
     </main>
-
     {% include footer.html %}
-
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+    <script type="text/javascript">
+        window.sr = ScrollReveal();
+        sr.reveal('.post-list-item, .scrollreveal, .post-wide', {
+            delay: 100,
+            viewFactor: 0.8,
+            scale: 1,
+        });
+    </script>
   </body>
 
 </html>

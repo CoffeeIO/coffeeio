@@ -1,24 +1,7 @@
-.typesetbot-header {
-    text-align: center;
-    @include clearfix;
-}
-.typesetbot-title {
-    display: inline-block;
-    margin: 30px 30px 0 30px;
-    vertical-align: middle;
-}
-.typesetbot-logo {
-    display: inline-block;
-    margin: 5px;
-}
-
-.pure-table {
-    margin: 0 auto;
-}
-
 /* https://codepen.io/rstrahl/pen/eJZQej */
 /* horizontal panel*/
 .panel-container {
+    max-height: 500px;
     display: flex;
     flex-direction: row;
     border: 1px solid silver;
@@ -29,7 +12,10 @@
 .panel-left {
     flex: 0 0 auto;
     padding: 10px;
-    width: calc(100% - 300px);
+    width: calc(100% - 50px);
+    @include respond-to(medium) {
+        width: calc(100% - 300px);
+    }
     min-height: 200px;
     max-width: 100%;
     min-width: 150px;

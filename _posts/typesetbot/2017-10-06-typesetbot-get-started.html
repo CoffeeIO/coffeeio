@@ -4,6 +4,8 @@ type: "docs"
 title:  "TypesetBot"
 desc: "Small project to dynamically typeset text on the web."
 date:   2017-10-06 12:00:00 +0100
+permalink: typesetbot-get-started
+
 ---
 <link rel="stylesheet" href="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
@@ -58,7 +60,7 @@ TypesetBot.attach(
     <a href="#" onclick="return false;">☰</a>
 </div>
 <ul class="pure-menu-list navbar table-of-contents closed">
-    
+
 </ul>
 <div class="content-inner">
 <h2 id="install">Install</h2>
@@ -149,7 +151,7 @@ these can be used as you would expect, even in the middle of a word and with sty
     hyphenPenalty: 50, // Penalty for line-breaking on a hyphen
     hyphenPenaltyRagged: 500, // Penalty for line-breaking on a hyphen when using ragged text
     flagPenalty: 3000, // Penalty when current and last line had flag value 1. Reffered to as 'α'
-    fitnessClassDemerit: 3000, // Penalty when switching between ratio classes. Reffered to as 'γ'
+    fitnessClassD   emerit: 3000, // Penalty when switching between ratio classes. Reffered to as 'γ'
     demeritOffset: 1, // Offset to prefer fewer lines by increasing demerit of "~zero badness lines"
 
     // "the value of q is increased by 1 (if q < 0) or decreased by 1 (if q > 0) until a feasible solution is
@@ -293,11 +295,10 @@ Reference: <a href="http://codepen.io/MGApcDev/pen/QvOpeq" target="_blank">here<
     <thead>
         <tr>
             <th>Description</th>
-            <th>First run</th>
-            <th>Second run</th>
+            <th>Initialize</th>
+            <th>Viewport change</th>
         </tr>
     </thead>
-
     <tbody>
         <tr>
             <td>1 paragraph, 441 words, w. hyphenation</td>
@@ -397,6 +398,7 @@ $carousel = $('.carousel').flickity({
 $('.quali-tabs').on('click', function() {
     setTimeout(function () {
         $carousel.flickity('resize');
+        TypesetBot.run('.typesetbot-quali');
     }, 10);
 });
 

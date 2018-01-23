@@ -6,6 +6,7 @@ desc: "Small project to dynamically typeset text on the web."
 date:   2017-10-06 12:00:00 +0100
 snippet-type: image
 snippet: https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png
+permalink: typesetbot
 ---
 <link rel="stylesheet" href="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.min.css">
 <script type="text/javascript" src="https://rawgit.com/MGApcDev/TypesetBot/master/dist/typesetbot.js"></script>
@@ -14,80 +15,78 @@ snippet: https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png
 <script type="text/javascript" src="https://cdn.rawgit.com/bramstein/hyphenation-patterns/dc01d58a/dist/browser/en-us.js"></script>
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-<header class="post-header typesetbot-header">
-    <div class="typesetbot-title">
+<header class="post-header project-header">
+    <div class="project-header-title">
         <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
         <p align="center">
         Dynamically typeset text on the web.
         </p>
-        <p align="center">
-        <div class="typesetbot-title-badgets">
+    </div>
+    <div class="project-header-badgets">
+        <div class="project-title-badgets">
             <a href="https://travis-ci.org/CoffeeIO/TypesetBot" rel="nofollow"><img alt="TypesetBot" src="https://camo.githubusercontent.com/2217ddb004939a9faf009ef172601c37cdbdfbed/68747470733a2f2f7472617669732d63692e6f72672f436f66666565494f2f54797065736574426f742e7376673f6272616e63683d6d6173746572" data-canonical-src="https://travis-ci.org/CoffeeIO/TypesetBot.svg?branch=master" style="max-width:100%;"></a>
             <a href="https://www.codacy.com/app/mgapcdev/TypesetBot/dashboard" rel="nofollow"><img src="https://camo.githubusercontent.com/f0e2ef069966c45dfd4468631773c496ba216e2e/68747470733a2f2f6170692e636f646163792e636f6d2f70726f6a6563742f62616467652f47726164652f6330393831333665663831333435623738633438306565363935333134613231" data-canonical-src="https://api.codacy.com/project/badge/Grade/c098136ef81345b78c480ee695314a21" style="max-width:100%;"></a>
             <a href="/CoffeeIO/TypesetBot/blob/master/LICENSE"><img alt="TypesetBot" src="https://camo.githubusercontent.com/d3518f2bfc1c5dc83f59ba8188a4fdee4553caae/68747470733a2f2f696d672e736869656c64732e696f2f6175722f6c6963656e73652f79616f7572742e737667" data-canonical-src="https://img.shields.io/aur/license/yaourt.svg" style="max-width:100%;"></a>
         </div>
-        <div class="typesetbot-title-badgets">
+        <div class="project-title-badgets">
             <a href="https://www.npmjs.com/package/typesetbot" rel="nofollow"><img alt="typesetbot" src="https://camo.githubusercontent.com/a5a84cb0972a914cecd17945558654818c1906b0/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f74797065736574626f742e737667" data-canonical-src="https://img.shields.io/npm/v/typesetbot.svg" style="max-width:100%;"></a>
             <a href="https://www.npmjs.com/package/typesetbot" rel="nofollow"><img alt="typesetbot" src="https://camo.githubusercontent.com/799f203d5f48590f01861dab0bd690860aadd724/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f646d2f74797065736574626f742e737667" data-canonical-src="https://img.shields.io/npm/dm/typesetbot.svg" style="max-width:100%;"></a>
         </div>
-        <div class="typesetbot-title-badgets">
+        <div class="project-title-badgets">
             <a href="https://waffle.io/CoffeeIO/TypesetBot" rel="nofollow"><img alt="TypesetBot" src="https://camo.githubusercontent.com/737ba2df181aed091cfacc3b0f5d09507fdd17d0/68747470733a2f2f62616467652e776166666c652e696f2f436f66666565494f2f54797065736574426f742e7376673f636f6c756d6e733d616c6c" data-canonical-src="https://badge.waffle.io/CoffeeIO/TypesetBot.svg?columns=all" style="max-width:100%;"></a>
         </div>
-        </p>
+    </div>
+    <div class="project-header-action">
         <a class="pure-button pure-button-primary" href="{{ site.baseurl }}{% post_url 2017-10-06-typesetbot-get-started %}">Get Started / Documentation</a>
     </div>
-    <img class="typesetbot-logo" alt="Rax" src="https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png" width="300">
-
+    <div class="project-header-logo">
+        <img class="" alt="Rax" src="https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png" width="300">
+    </div>
 </header>
 <hr>
 <div class="post-wide">
     <h2>Make your web text look professional, without hiring a professional typesetter.</h2>
 </div>
 <ul class="post-list">
-    <div class="front-post">
-        <div class="front-post-display">
-            <img src="/assets/project/typesetbot/features/device.png" >
+    <li class="post-list-item wide">
+        <div class="post-list-item-display">
+            <img src="/assets/project/typesetbot/pitch/device.png" >
         </div>
-        <div class="front-post-desc">
-            <li>
-                <h2>Device support</h2>
-                <p>TypesetBot works on any device size and dynamically re-typesets every time the viewport size changes. As text width gets smaller the more benefit from TypesetBot you will see.</p>
-            </li>
+        <div class="post-list-item-desc">
+            <h2>Device support</h2>
+            <p>TypesetBot works on any device size and dynamically re-typesets every time the viewport size changes. As text width gets smaller the more benefit from TypesetBot you will see.</p>
         </div>
-    </div>
-    <div class="front-post">
-        <div class="front-post-display">
-            <img src="/assets/project/typesetbot/features/hyphen.png" >
+    </li>
+    <li class="post-list-item wide">
+        <hr>
+        <div class="post-list-item-display">
+            <img src="/assets/project/typesetbot/pitch/hyphen.png" >
         </div>
-        <div class="front-post-desc">
-            <li>
-                <h2>Hyphenation</h2>
-                <p>TypesetBot uses a hyphenation algorithm, so words are only hyphenated if it improves the overall look of the text. Currently there is support for hyphenation in 38 different languages.</p>
-            </li>
+        <div class="post-list-item-desc">
+            <h2>Hyphenation</h2>
+            <p>TypesetBot uses a hyphenation algorithm, so words are only hyphenated if it improves the overall look of the text. Currently there is support for hyphenation in 39 different languages.</p>
         </div>
-    </div>
-    <div class="front-post">
-        <div class="front-post-display">
-            <img src="/assets/project/typesetbot/features/ragged.png" >
+    </li>
+    <li class="post-list-item wide">
+        <hr>
+        <div class="post-list-item-display">
+            <img src="/assets/project/typesetbot/pitch/smart-lines.png" >
         </div>
-        <div class="front-post-desc">
-            <li>
-                <h2>Smart line algorithm</h2>
-                <p>TypesetBot's algorithm figures out the best layout, so text doesn't jump from short to long lines.</p>
-            </li>
+        <div class="post-list-item-desc">
+            <h2>Smart line algorithm</h2>
+            <p>TypesetBot's algorithm figures out the best layout, so the text doesn't jump from short to long lines.</p>
         </div>
-    </div>
-    <div class="front-post">
-        <div class="front-post-display">
-            <img src="/assets/project/typesetbot/features/setting.png" >
+    </li>
+    <li class="post-list-item wide">
+        <hr>
+        <div class="post-list-item-display">
+            <img src="/assets/project/typesetbot/pitch/settings.png" >
         </div>
-        <div class="front-post-desc">
-            <li>
-                <h2>Settings</h2>
-                <p>A wide range of settings are adjustable from a json object, to allow full customizability, so you get the result you want.</p>
-            </li>
+        <div class="post-list-item-desc">
+            <h2>Settings</h2>
+            <p>A wide range of settings are adjustable from a json object, to allow full customizability, so you get the result you want.</p>
         </div>
-    </div>
+    </li>
 </ul>
 <div class="post-wide">
     <p>Get started today <br>
@@ -101,5 +100,5 @@ snippet: https://raw.githubusercontent.com/CoffeeIO/TypesetBot/master/logo.png
 </article>
 
 <script charset="utf-8">
-TypesetBot.attach('.front-post');
+TypesetBot.attach('.post-list-item', {alignment: 'ragged-right'});
 </script>

@@ -6,28 +6,26 @@ layout: default
     {% include header.html %}
     {{ content }}
 
-    <ul class="post-list">
+    <ul class="post-list hidden-hr">
         {% for post in site.posts %}
         {% if post.type == 'article' %}
-        <div class="front-post">
-            <div class="front-post-display">
+        <li class="post-list-item">
+            <hr>
+            <div class="post-list-item-display">
                 {% if post.snippet-type == 'image' %}
                     <img src="{{ post.snippet }}" >
                 {% else if post.snippet-type == 'code' %}
                     {{ post.snippet }}
                 {% endif %}
             </div>
-            <div class="front-post-desc">
-                <li>
-                    <h2>
-                        {{ post.title | escape }}
-                    </h2>
-                    <p>{{ post.desc }}</p>
-                    <a href="{{ post.url | relative_url }}">View project <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                </li>
+            <div class="post-list-item-desc">
+                <h2>
+                    {{ post.title | escape }}
+                </h2>
+                <p>{{ post.desc }}</p>
+                <a href="{{ post.url | relative_url }}">View project <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
             </div>
-
-        </div>
+        </li>
         {% endif %}
         {% endfor %}
     </ul>
