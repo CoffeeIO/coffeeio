@@ -27,6 +27,7 @@
     margin-bottom: 35px;
     border-radius: 6px;
     width: 100%;
+    display: block !important;
     @include respond-to(medium) {
         height: 300px;
     }
