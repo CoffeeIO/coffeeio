@@ -39,7 +39,7 @@ permalink: typesetbot/
 </header>
 <hr>
 <div class="post-wide">
-    <h2>Make your web text look professional, without hiring a professional typesetter.</h2>
+    <h4>Make your web text look professional, without hiring a professional typesetter.</h4>
 </div>
 
 <div class="demo">
@@ -56,47 +56,120 @@ permalink: typesetbot/
 
 <hr>
 
+<h2 id="install">Install</h2>
+
+<h3 id="cdn">CDN</h3>
+{% highlight html %}
+<link href="https://unpkg.com/typesetbot/dist/typesetbot.min.css" rel="stylesheet">
+<script src="https://unpkg.com/typesetbot/dist/typesetbot.min.js" type="text/javascript"></script>
+
+<!-- (optional) -->
+<!-- hyphenation library -->
+<script src="https://unpkg.com/@coffeeio/hypher@1.0.0/dist/hypher.js" type="text/javascript"></script>
+<!-- hyphenation pattern for US english -->
+<script src="https://unpkg.com/@fluid-project/hyphenation-patterns@0.2.2-dev.20181115T211247Z.d313a52/dist/browser/en-us.js" type="text/javascript"></script>
+{% endhighlight %}
+
+<h3 id="npm">Download</h3>
+<ul>
+    <li><a href="https://unpkg.com/typesetbot/dist/typesetbot.css">typesetbot.css</a></li>
+    <li><a href="https://unpkg.com/typesetbot/dist/typesetbot.js">typesetbot.js</a></li>
+    <li><a href="https://unpkg.com/@coffeeio/hypher@1.0.0/dist/hypher.js">hypher.js</a></li>
+    <li>Hyphenation pattern example: <a href="https://unpkg.com/@fluid-project/hyphenation-patterns@0.2.2-dev.20181115T211247Z.d313a52/dist/browser/en-us.js">en-us.js</a></li>
+</ul>
+<p>Minified:</p>
+<ul>
+    <li><a href="https://unpkg.com/typesetbot/dist/typesetbot.min.css">typesetbot.min.css</a></li>
+    <li><a href="https://unpkg.com/typesetbot/dist/typesetbot.min.js">typesetbot.min.js</a></li>
+</ul>
+
+<h2>License </h2>
+
+<h3>Commercial license</h3>
+<p>If you want to use TypesetBot to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary.</p>
+<script src="https://gumroad.com/js/gumroad.js"></script>
+<div style="text-align: center;">
+    <a class="gumroad-button" href="https://gum.co/TypesetBot" target="_blank">Buy commercial license on Gumroad</a>
+</div>
+
+<h3>Open source license</h3>
+<p>If you are creating an open source application under a license compatible with the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU GPL license v3</a>, you may use TypesetBot under the terms of the GPLv3.</p>
+
+
+<h2>Usage</h2>
+
+{% highlight html %}
+<head>
+<!-- Get hyphenation library -->
+<script type="text/javascript" src="https://unpkg.com/@coffeeio/hypher@1.0.0/dist/hypher.js"></script>
+<!-- Get 'en-us' hyphenation patterns -->
+<script type="text/javascript" src="https://unpkg.com/@fluid-project/hyphenation-patterns@0.2.2-dev.20181115T211247Z.d313a52/dist/browser/en-us.js"></script>
+
+<!-- Get TypesetBot dependencies (latest version) -->
+<link rel="stylesheet" href="https://unpkg.com/typesetbot/dist/typesetbot.min.css">
+<script type="text/javascript" src="https://unpkg.com/typesetbot/dist/typesetbot.min.js"></script>
+
+<!-- Initialize TypesetBot -->
+<script type="text/javascript">
+let tsb = new TypesetBot(
+    '.container',                 // Query selector
+    { 'hyphenLanguage': 'en-us' } // Settings
+);
+</script>
+</head>
+
+<body>
+    <p class="container">Lorem ipsum...</p>
+    <p class="container">Lorem ipsum...</p>
+</body>
+{% endhighlight %}
+
+<hr>
+<h2>Features</h2>
+
+
+
 <ul class="post-list">
-        <li class="post-list-item wide">
-            <div class="post-list-item-display">
-                <img src="/assets/project/typesetbot/pitch/device.png" >
-            </div>
-            <div class="post-list-item-desc">
-                <h2>Device support</h2>
-                <p>TypesetBot works on any device size and dynamically re-typesets every time the viewport size changes. As text width gets smaller the more benefit from TypesetBot you will see.</p>
-            </div>
-        </li>
-        <li class="post-list-item wide">
-            <hr>
-            <div class="post-list-item-display">
-                <img src="/assets/project/typesetbot/pitch/hyphen.png" >
-            </div>
-            <div class="post-list-item-desc">
-                <h2>Hyphenation</h2>
-                <p>TypesetBot uses a hyphenation algorithm, so words are only hyphenated if it improves the overall look of the text. Currently there is support for hyphenation in 39 different languages.</p>
-            </div>
-        </li>
-        <li class="post-list-item wide">
-            <hr>
-            <div class="post-list-item-display">
-                <img src="/assets/project/typesetbot/pitch/smart-lines.png" >
-            </div>
-            <div class="post-list-item-desc">
-                <h2>Smart line algorithm</h2>
-                <p>TypesetBot's algorithm figures out the best layout, so the text doesn't jump from short to long lines.</p>
-            </div>
-        </li>
-        <li class="post-list-item wide">
-            <hr>
-            <div class="post-list-item-display">
-                <img src="/assets/project/typesetbot/pitch/settings.png" >
-            </div>
-            <div class="post-list-item-desc">
-                <h2>Settings</h2>
-                <p>A wide range of settings are adjustable from a json object, to allow full customizability, so you get the result you want.</p>
-            </div>
-        </li>
-    </ul>
+    <li class="post-list-item wide">
+        <div class="post-list-item-display">
+            <img src="/assets/project/typesetbot/pitch/device.png" >
+        </div>
+        <div class="post-list-item-desc">
+            <h2>Device support</h2>
+            <p>TypesetBot works on any device size and dynamically re-typesets every time the viewport size changes. As text width gets smaller the more benefit from TypesetBot you will see.</p>
+        </div>
+    </li>
+    <li class="post-list-item wide">
+        <hr>
+        <div class="post-list-item-display">
+            <img src="/assets/project/typesetbot/pitch/hyphen.png" >
+        </div>
+        <div class="post-list-item-desc">
+            <h2>Hyphenation</h2>
+            <p>TypesetBot uses a hyphenation algorithm, so words are only hyphenated if it improves the overall look of the text. Currently there is support for hyphenation in 39 different languages.</p>
+        </div>
+    </li>
+    <li class="post-list-item wide">
+        <hr>
+        <div class="post-list-item-display">
+            <img src="/assets/project/typesetbot/pitch/smart-lines.png" >
+        </div>
+        <div class="post-list-item-desc">
+            <h2>Smart line algorithm</h2>
+            <p>TypesetBot's algorithm figures out the best layout, so the text doesn't jump from short to long lines.</p>
+        </div>
+    </li>
+    <li class="post-list-item wide">
+        <hr>
+        <div class="post-list-item-display">
+            <img src="/assets/project/typesetbot/pitch/settings.png" >
+        </div>
+        <div class="post-list-item-desc">
+            <h2>Settings</h2>
+            <p>A wide range of settings are adjustable from a json object, to allow full customizability, so you get the result you want.</p>
+        </div>
+    </li>
+</ul>
 
 
 
