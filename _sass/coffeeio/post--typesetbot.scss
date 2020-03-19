@@ -137,3 +137,82 @@ input:checked + label {
     margin-right: 10px;
     border-radius: 5px;
 }
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-error {
+    background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+.button-warning {
+    background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-secondary {
+    background: rgb(66, 184, 221); /* this is a light blue */
+}
+
+.demo {
+    margin-bottom: 10px;
+    .demo-switch {
+        margin: 0 auto;
+        display: block;
+    }
+    .demo-width {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        // margin: 10px;
+        > span {
+            &:hover {
+                cursor: pointer;
+            }
+            margin: 10px;
+            &.selected {
+                border-bottom: 1px solid black;
+            }
+        }
+    }
+    .demo-body {
+        margin: 0 auto;
+        height: 460px;
+        // text-align: justify;
+        width: 100%;
+    }
+}
+.tsb-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    a {
+        margin: 10px;
+    }
+}
+
+.tsb-example {
+    display: flex;
+    .tsb-example--code {
+        width: 50%;
+        figure {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+    .tsb-example--demo {
+        width: 50%;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 10px;
+    }
+}
