@@ -57,9 +57,6 @@
             text-decoration: none;
         }
         @include clearfix;
-        @include respond-to(max) {
-            display: none;
-        }
     }
 }
 .table-of-contents {
@@ -79,15 +76,16 @@
     overflow-y: hidden;
     transition: max-height 0.5s, border 0s;
     transition-timing-function: ease-in-out;
-    @include respond-to(max) {
-        margin: 20px;
-    }
     &.closed {
         max-height: 0;
-        border: 0px solid $color-white;
-        transition: max-height 0.5s, border 0s ease 0.5s;
         @include respond-to(max) {
             max-height: 1000px;
+        }
+    }
+    &.closed-desktop {
+        max-height: 1000px;
+        @include respond-to(max) {
+            max-height: 0;
         }
     }
 }

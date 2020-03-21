@@ -46,8 +46,10 @@ document.addEventListener("DOMContentLoaded", function(){
     document.querySelector(".navbar.burger > a").addEventListener("click", function(e) {
         if (toc.classList.contains('closed')) {
             toc.classList.remove('closed');
+            toc.classList.add('closed-desktop');
         } else {
             toc.classList.add('closed');
+            toc.classList.remove('closed-desktop');
         }
     });
 });
