@@ -18,3 +18,10 @@
 html {
     scroll-behavior: smooth;
 }
+
+#cookies-eu-banner {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 100;
+}

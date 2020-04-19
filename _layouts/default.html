@@ -2,6 +2,12 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {% include head.html %}
   <body>
+      <div id="cookies-eu-banner" style="display: none;">
+          CoffeeIO use cookies to track activity using Google Analytics for statistical purposes.
+          <a href="{{ site.baseurl }}{% post_url 2020-04-19-cookie-policy %}" id="cookies-eu-more">Read more</a>
+          <button id="cookies-eu-reject">Reject</button>
+          <button id="cookies-eu-accept">Accept</button>
+      </div>
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}
@@ -17,6 +23,18 @@
             scale: 1,
         });
     </script>
+    <script src="https://unpkg.com/cookies-eu-banner@2.0.1/dist/cookies-eu-banner.min.js"></script>
+    <script>
+        new CookiesEuBanner(function () {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-107864143-1');
+    }, true);
+
+    </script>
+
   </body>
 
 </html>
