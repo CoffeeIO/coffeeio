@@ -1,8 +1,10 @@
 tsb-line {
-    display: block; }
+  display: block; }
 
-  .typesetbot-justify {
-    text-align: justify; }
+.typesetbot-justify {
+  text-align: justify; }
+  .typesetbot-justify tsb-line {
+    word-spacing: normal; }
     .typesetbot-justify tsb-line:after {
       content: "";
       display: inline-block;
@@ -10,11 +12,11 @@ tsb-line {
     .typesetbot-justify tsb-line:last-of-type:after {
       display: none; }
 
-  .typesetbot-right tsb-line {
-    text-align: right; }
+.typesetbot-right tsb-line {
+  text-align: right; }
 
-  .typesetbot-left tsb-line {
-    text-align: left; }
+.typesetbot-left tsb-line {
+  text-align: left; }
 
-  .typesetbot-center tsb-line {
-    text-align: center; }
+.typesetbot-center tsb-line {
+  text-align: center; }
