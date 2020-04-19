@@ -1,6 +1,6 @@
 ---
 layout: default
-type: "article"
+type: "docs"
 title:  "TypesetBot options"
 permalink: typesetbot/options
 ---
@@ -259,4 +259,31 @@ permalink: typesetbot/options
 {% highlight javascript %}
 // Default:
 'debug': false // Set to true to enable
+{% endhighlight %}
+
+
+<h3>noRun</h3>
+<ul>
+    <li>Set this setting to true, so avoid running TypesetBot as soon as the instance is created.</li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'noRun': false // Set to true to enable
+{% endhighlight %}
+
+<h3>logs</h3>
+<ul>
+    <li>Define how many logs levels should be printed in the console.</li>
+    <li>By default only error and warnings will be shown.</li>
+    <li>To show all log messages </li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'logs': ['error', 'warn'],
+// Example; Show all log messages:
+'logs': ['error', 'warn', 'log'],
+// Example; Show only errors:
+'logs': ['error'],
 {% endhighlight %}
