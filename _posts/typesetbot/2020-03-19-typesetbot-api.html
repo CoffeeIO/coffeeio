@@ -1,0 +1,60 @@
+---
+layout: default
+type: "docs"
+title:  "TypesetBot API"
+permalink: typesetbot/api
+---
+
+{% include typesetbot/nav.html %}
+
+<h1>API</h1>
+
+<h2>Methods</h2>
+
+<h3>Initialize new instance</h3>
+<p>You can initialize TypesetBot with or without a variable.</p>
+
+
+{% highlight javascript %}
+new TypesetBot('.container');
+// or
+var tsb = new TypesetBot('.container');
+{% endhighlight %}
+
+<h3>unwatch and watch</h3>
+TypesetBot will by default watch if the viewport changes and rerun everytime.
+By calling unwatch() the TypesetBot instance will stop rerunning on viewport changes.
+Calling watch() will have the TypesetBot instance watch for viewport changes again.
+
+{% highlight javascript %}
+// Unwatch for viewport changes.
+tsb.unwatch();
+// Watch for viewport changes again.
+tsb.watch()
+{% endhighlight %}
+
+<h3>rerun</h3>
+If you need to force a rerun of the typesetting algorithm call rerun() and the TypesetBot instance will rerun.
+
+{% highlight javascript %}
+// Rerun instance.
+tsb.rerun();
+{% endhighlight %}
+
+<h3>terminate</h3>
+If you want to stop using TypesetBot you can call terminate() and content will revert to the original content and memory will be cleared up.
+{% highlight javascript %}
+// Terminate instance.
+tsb.terminate();
+{% endhighlight %}
+
+<h2>Events</h2>
+
+<h3>typesetbot-viewport--reize</h3>
+A single piece of code checks for viewport changes and dispatches an event to trigger all watching instances to rerun.
+Fire an event if all watching TypesetBot instances should rerun.
+
+{% highlight javascript %}
+// Rerun all watching instances.
+document.body.dispatchEvent(new Event('typesetbot-viewport--reize'));
+{% endhighlight %}

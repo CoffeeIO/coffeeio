@@ -1,0 +1,289 @@
+---
+layout: default
+type: "docs"
+title:  "TypesetBot options"
+permalink: typesetbot/options
+---
+
+{% include typesetbot/nav.html %}
+
+<h1>Options</h1>
+
+<h2>Hyphenation</h2>
+
+
+<h3>hyphenLanguage</h3>
+<ul>
+    <li>Each language break words at different points. These point can be calculated faily accurately by using hyphenation patterns.</li>
+    <li>Full list of available hyphenation languages found <a href="https://github.com/fluid-project/hyphenation-patterns/tree/master/dist/browser" target="_blank">here</a>.</li>
+</ul>
+
+
+{% highlight html %}
+<!-- Hyphenation pattern - english -->
+<script src="https://unpkg.com/@fluid-project/hyphenation-patterns@0.2.2-dev.20181115T211247Z.d313a52/dist/browser/en-us.js"></script>
+{% endhighlight %}
+
+{% highlight javascript %}
+// Default: US english
+'hyphenLanguage': 'en-us'
+{% endhighlight %}
+
+{% highlight javascript %}
+// Disable hyphenation
+'hyphenLanguage': ''
+{% endhighlight %}
+
+<h3>hyphenLeftMin</h3>
+
+<ul>
+    <li>Words can hyphenate after a single letter. We can define a minimum number of characters before words are allowed to hyphenate.</li>
+    <li>Example "hyphenate" breaks at these points: "hy-phen-ate".</li>
+</ul>
+
+{% highlight javascript %}
+// Default: minimum number of characters on left side of word.
+'hyphenLeftMin': 2
+{% endhighlight %}
+
+<ul>
+    <li>If there is too much hyphenation, this can reduced by increasing the value. </li>
+    <li>Increasing the value to 3 would update "hyphenate" to break at these points: "hyphen-ate".</li>
+</ul>
+
+{% highlight javascript %}
+// Increase to lower hyphenation rate.
+'hyphenLeftMin': 4
+{% endhighlight %}
+
+
+<h3>hyphenRightMin</h3>
+<ul>
+    <li>Words can hyphenate after a single letter. We can define a minimum number of characters before words are allowed to hyphenate.</li>
+    <li>Example "hyphenate" breaks at these points: "hy-phen-ation".</li>
+</ul>
+{% highlight javascript %}
+// Default: minimum number of characters on right side of word.
+'hyphenRightMin': 2
+{% endhighlight %}
+
+<ul>
+    <li>If there is too much hyphenation, this can reduced by increasing the value. </li>
+    <li>Increasing the value to 4 would update "hyphenate" to break at these points: "hy-phenate".</li>
+</ul>
+
+{% highlight javascript %}
+// Increase to lower hyphenation rate.
+'hyphenRightMin': 4
+{% endhighlight %}
+
+<h2>Algorithm</h2>
+<h3>alignment</h3>
+<ul>
+    <li>Alignment defines how text is presented.</li>
+    <li>This is not purely style as the rate of hyphenation is more acceptable with certain alignment.</li>
+</ul>
+
+{% highlight javascript %}
+// Default: justified as it is generally more readable.
+'alignment': 'justify' // options: 'left', 'right', 'center'
+{% endhighlight %}
+
+
+
+
+<h3>hyphenPenalty and hyphenPenaltyRagged</h3>
+<ul>
+    <li>Penalty is the algorithmic discouragement of a certain behavior.</li>
+    <li>Increaing the hyphenPenalty makes it less like for hyphenation to occur on justified text.</li>
+    <li>Increaing the hyphenPenaltyRagged makes it less like for hyphenation to occur on left, right and center aligned text.</li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'hyphenPenalty': 50,
+'hyphenPenaltyRagged': 500
+{% endhighlight %}
+
+<h3>flagPenalty</h3>
+<ul>
+    <li>Penalty is the algorithmic discouragement of a certain behavior.</li>
+    <li>Increaing the flagPenalty makes it less like for hyphenation to occur 2 lines in a row.</li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'flagPenalty': 3000
+{% endhighlight %}
+
+<h3>fitnessClassDemerit</h3>
+<ul>
+    <li>Demerit is the algorithmic discouragement of a certain behavior.</li>
+    <li>Increaing the flagPenalty makes it less like for lines to have different length.</li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'fitnessClassDemerit': 3000
+{% endhighlight %}
+
+<h3>fitnessClasses</h3>
+<ul>
+    <li>Fitness class is a definition of how much word-spacing there is on a given line.</li>
+    <li>The purpose is to limit how much the text goes from: a lot of word-spacing, to very little word-spacing.</li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'fitnessClasses': [-1, -0.5, 0.5, 1, Infinity]
+{% endhighlight %}
+
+
+<h3>demeritOffset</h3>
+<ul>
+    <li>The demerit offset is added to help differentiate between multiple good solutions, by increasing the penalty of all solutions.</li>
+    <li>Increaing the demeritOffset will possibly help differentiate good solutions. Increase it too much and it's harder to differentiate good from bad solutions.</li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'fitnessClassDemerit': 1
+{% endhighlight %}
+
+
+
+
+<h3>maxRatio</h3>
+<ul>
+    <li>Adjustment ratio is a value to represent how much word-spacing there is compared to length of line and number of words in line.</li>
+    <li>The maxRatio adjustment ratio defines when there is too much word-spacing on a line that it is not a valid solution.</li>
+    <li>Increase the value will negatively affect performance, decrease value can possibly make performance better or worse.</li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'maxRatio': 2
+{% endhighlight %}
+
+
+<h3>minRatio</h3>
+<ul>
+    <li>Adjustment ratio is a value to represent how much word-spacing there is compared to length of line and number of words in line.</li>
+    <li>The minRatio adjustment ratio defines when there is too little word-spacing on a line that it is not a valid solution.</li>
+    <li>Increase the value if the text appears with too little word-spacing.</li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'minRatio': -1
+{% endhighlight %}
+
+<h3>absoluteMaxRatio</h3>
+<ul>
+    <li>If no valid solution is found the algorithm will rerun with an increased maxRatio.</li>
+    <li>The absoluteMaxRatio defines when the algorithm should stop looking for solutions.</li>
+    <li>If the text is very narrow this value can be increased to allow more spacing between words for the final solution.</li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'absoluteMaxRatio': 5
+{% endhighlight %}
+
+
+<h3>unsupportedTags</h3>
+<ul>
+    <li>List of HTML tags that is not supported by TypesetBot.</li>
+    <li>If you experience problems will a certain HTML tag, add it to the list and it will be remove before the typesetting is run.</li>
+    <li>Tag names should be written in uppercase.</li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'unsupportedTags': ['BR', 'IMG'];
+{% endhighlight %}
+
+
+<h2>Font</h2>
+
+<h3>spaceWidth</h3>
+<ul>
+<li>Ideal word-spacing based on the font size in.</li>
+<li>Increase value to prefer more word-spacing.</li>
+<li>Decrease value to prefer less word-spacing.</li>
+</ul>
+
+
+
+
+{% highlight javascript %}
+// Default:
+'spaceWidth': 1 / 3 // 0.3333, 1/3 of the font-size
+{% endhighlight %}
+
+
+<h3>spaceStretchability</h3>
+<ul>
+    <li>How much should the word-spacing be able to stretch from the ideal space width.</li>
+    <li>Increase value to allow more word-spacing.</li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'spaceStretchability': 1 / 6 // 1/6 of the font-size
+{% endhighlight %}
+
+
+<h3>spaceShrinkability</h3>
+<ul>
+<li>How much should the word-spacing be able to shrink from the ideal space width.</li>
+<li>Increase value to allow less word-spacing.</li>
+</ul>
+
+
+
+{% highlight javascript %}
+// Default:
+'spaceShrinkability': 1 / 9 // 1/9 of the font-size
+{% endhighlight %}
+
+
+<h2>Debug properties</h2>
+
+<h3>debug</h3>
+<ul>
+    <li>Debug mode to print performance statistics of TypesetBot.</li>
+    <li>Set to true to enable mode.</li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'debug': false // Set to true to enable
+{% endhighlight %}
+
+
+<h3>noRun</h3>
+<ul>
+    <li>Set this setting to true, so avoid running TypesetBot as soon as the instance is created.</li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'noRun': false // Set to true to enable
+{% endhighlight %}
+
+<h3>logs</h3>
+<ul>
+    <li>Define how many logs levels should be printed in the console.</li>
+    <li>By default only error and warnings will be shown.</li>
+    <li>To show all log messages </li>
+</ul>
+
+{% highlight javascript %}
+// Default:
+'logs': ['error', 'warn'],
+// Example; Show all log messages:
+'logs': ['error', 'warn', 'log'],
+// Example; Show only errors:
+'logs': ['error'],
+{% endhighlight %}
