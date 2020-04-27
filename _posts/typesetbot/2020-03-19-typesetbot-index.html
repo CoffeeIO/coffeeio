@@ -182,7 +182,11 @@ permalink: typesetbot/
 
 
 <script>
-var settings = { 'hyphenLanguage': 'en-us', 'alignment': 'justify' };
+var settings = {
+    hyphenLanguage: 'en-us',
+    alignment: 'justify',
+    debug: true,
+};
 var demoSelector = '.demo .demo-body p';
 var tsb = new TypesetBot(demoSelector, settings);
 
