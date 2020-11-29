@@ -80,6 +80,18 @@
         }
     }
 }
+.post-list-item--credit {
+    bottom: 30px;
+    font-style: italic;
+    font-size: 12px;
+    right: 0;
+    opacity: 0.6;
+    float: right;
+    @include respond-to(medium) {
+        position: absolute;
+
+    }
+}
 .post-list-item-desc {
     float: right;
     width: 100%;

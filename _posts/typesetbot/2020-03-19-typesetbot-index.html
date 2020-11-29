@@ -1,7 +1,7 @@
 ---
 layout: default
 type: "article"
-title:  "TypesetBot - beta"
+title:  "TypesetBot - Beta"
 desc: "Dynamically typeset text on the web."
 date:   2017-10-06 12:00:00 +0100
 snippet-type: image
@@ -188,8 +188,8 @@ var settings = {
     debug: true,
 };
 var demoSelector = '.demo .demo-body p';
-var tsb = new TypesetBot(demoSelector, settings);
-
+// var tsb = new TypesetBot(demoSelector, settings);
+let tsb = null;
 var desktopWidth = '100%';
 var tabletWidth = '540px';
 var mobileWidth = '280px';
@@ -223,7 +223,7 @@ document.querySelector(".demo .option3").addEventListener("click", function(e) {
 
 function setDemoWidth(width) {
     document.querySelector(".demo .demo-body").style.maxWidth = width;
-    tsb.rerun();
+    // tsb.rerun();
 }
 
 function updateSelected(target) {
@@ -240,6 +240,6 @@ updateSelected(document.querySelector(".demo .option3"));
 setDemoWidth(mobileWidth);
 
 
-var tsbPosts = new TypesetBot('.post-list-item-desc p', settings);
+// var tsbPosts = new TypesetBot('.post-list-item-desc p', settings);
 
 </script>

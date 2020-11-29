@@ -14,6 +14,11 @@ layout: default
             <div class="post-list-item-display">
                 {% if post.snippet-type == 'image' %}
                     <img src="{{ post.snippet }}" >
+                    {% if post.snippet-ref %}
+                        <span class="post-list-item--credit">
+                            - {{ post.snippet-ref }}
+                        </span>
+                    {% endif %}
                 {% else if post.snippet-type == 'code' %}
                     {{ post.snippet }}
                 {% endif %}
