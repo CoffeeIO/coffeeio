@@ -1,0 +1,30 @@
+---
+layout: post
+type: "article"
+title: "Machine Learning Test"
+desc: "Experimenting with Tensorflow JS."
+date: 2021-02-08 12:00:00 +0100
+---
+
+
+<div class="project--ml">
+    <div id="wrapper">
+
+    <div id="fileDropBox">Drop files here.</div>
+        </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+
+<script>
+
+async function getModel() {
+    const model = await tf.loadLayersModel('/assets/project/machine-learning/coffee-vs-cat-v1/model.json');
+    return model;
+}
+
+let model = getModel();
+
+</script>
+
+
