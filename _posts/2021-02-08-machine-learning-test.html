@@ -1,6 +1,6 @@
 ---
 layout: post
-type: "article"
+type: "docs"
 title: "Machine Learning Test"
 desc: "Experimenting with Tensorflow JS."
 date: 2021-02-08 12:00:00 +0100
@@ -18,12 +18,65 @@ date: 2021-02-08 12:00:00 +0100
 
 <script>
 
-async function getModel() {
-    const model = await tf.loadLayersModel('/assets/project/machine-learning/coffee-vs-cat-v1/model.json');
-    return model;
+// async function getModel() {
+//     const model = await
+//     return model;
+// }
+function getImage() {
+    return new Promise(resolve => {
+        let img = new Image();
+        img.src = '/assets/project/machine-learning/images/IMG_20210207_194858.jpg'
+        img.onload = () => {
+            var output = tf.browser.fromPixels(img)
+                .resizeNearestNeighbor([224,224])
+                .toFloat();
+            console.log('Image loaded');
+            resolve(output);
+        }
+    });
+
 }
 
-let model = getModel();
+
+async function run() {
+    console.log('Loading model..');
+    let model = await tf.loadLayersModel('https://coffeeio.com/assets/project/machine-learning/coffee-vs-cat-v1/model.json');
+    console.log('Model loaded');
+    let tensor = await getImage();
+    console.log(coffee);
+    console.log('test');
+
+
+    let prediction = await model.predict(tensor).data();
+    console.log('prediction:::'+ prediction);
+
+    console.log(prediction);
+    // let top5 = Array.from(prediction)
+    // .map(function(p,i){
+    //     return {
+    //         probability: p,
+    //         className: prediction[i]
+    //     };
+    // }).sort(function(a,b){
+    //     return b.probability-a.probability;
+    // }).slice(0,1);
+
+    // $("#prediction-list").empty();
+    // top5.forEach(function(p){
+    //     $("#prediction-list").append(`<li>${p.className}:${p.probability.toFixed(6)}</li>`);
+    // });
+}
+
+run();
+
+
+
+
+
+
+// getCoffee.then((value) => {
+//     console.log(value);
+// });
 
 </script>
 
