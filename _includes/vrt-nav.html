@@ -1,0 +1,57 @@
+
+
+
+<div class="nav-website-icon" style="margin-bottom: 10px;">
+    <a href="/" title="Take me to the frontpage">
+        <img src="/assets/logo/coffeeio32x32.png" alt="logo" class="footer-heading-logo">
+    </a>
+</div>
+<div class="tsb-nav">
+    <a class="pure-button pure-button-primary" href="/dom-based-vrt">Home</a>
+    <a class="pure-button pure-button-primary" href="/dom-based-vrt/how-does-it-work">How does it work</a>
+    <a class="pure-button pure-button-primary" href="https://github.com/CoffeeIO/DOM-based-VRT/blob/master/LICENSE">License</a>
+</div>
+
+<div class="navbar burger">
+    <a href="#" onclick="return false;">☰</a>
+</div>
+<ul class="pure-menu-list navbar table-of-contents closed"></ul>
+
+
+<script>
+// Contruct table of contents.
+document.addEventListener("DOMContentLoaded", function(){
+    var toc = document.querySelector('.table-of-contents');
+    [].slice
+      .call(document.querySelectorAll("main h2, main h3"))
+      .forEach(item => {
+
+        var id = item.innerText.toLowerCase().split(' ').join('-');
+        item.id = id;
+        var tag = item.tagName;
+        var text = item.innerHTML;
+
+        if (id != null) {
+            item.innerHTML = '<a href="#' + id + '" aria-hidden="true" class="anchor" id="user-content-table-of-contents"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>' + item.innerHTML;
+            if (tag === 'H2') {
+                toc.innerHTML += ('<li class="pure-menu-item"><a href="#' + id + '" class="pure-menu-link">' + text + '</a></li>');
+            } else if (tag === 'H3') {
+                toc.innerHTML += ('<li class="pure-menu-item indent"><a href="#' + id + '" class="pure-menu-link">' + text + '</a></li>');
+            }
+        }
+      });
+
+    // Toggle toc display on mobile.
+    document.querySelector(".navbar.burger > a").addEventListener("click", function(e) {
+        if (toc.classList.contains('closed')) {
+            toc.classList.remove('closed');
+            toc.classList.add('closed-desktop');
+        } else {
+            toc.classList.add('closed');
+            toc.classList.remove('closed-desktop');
+        }
+    });
+});
+
+
+</script>
