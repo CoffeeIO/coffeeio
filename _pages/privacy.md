@@ -5,7 +5,7 @@ title: "Privacy Policy — PR File Review Tracker for Bitbucket"
 desc: "Privacy policy for the PR File Review Tracker for Bitbucket Chrome extension. No data collection, no tracking, no network requests."
 description: "Privacy policy for the PR File Review Tracker for Bitbucket Chrome extension. No data collection, no tracking, no network requests."
 date: 2026-05-18 12:00:00 +0100
-permalink: /privacy/
+permalink: /privacy-policy-pr-file-review-tracker-for-bitbucket/
 ---
 
 _Last updated: 2026-05-18_
