@@ -8,8 +8,6 @@ date: 2026-05-18 12:00:00 +0100
 permalink: /privacy/
 ---
 
-# Privacy Policy — PR File Review Tracker for Bitbucket
-
 _Last updated: 2026-05-18_
 
 ## Summary
