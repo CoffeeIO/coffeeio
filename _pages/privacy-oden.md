@@ -1,18 +1,18 @@
 ---
 layout: post
 type: "docs"
-title: "Privacy Policy — Local Whisper Unlimited for Android"
-desc: "Privacy policy for the Local Whisper Unlimited Android app. Speech is transcribed on the phone; no audio or text ever leaves it."
-description: "Privacy policy for the Local Whisper Unlimited Android app. Speech is transcribed on the phone; no audio or text ever leaves it."
+title: "Privacy Policy — Oden for Android"
+desc: "Privacy policy for the Oden voice typing app for Android. Speech is transcribed on the phone; no audio or text ever leaves it."
+description: "Privacy policy for the Oden voice typing app for Android. Speech is transcribed on the phone; no audio or text ever leaves it."
 date: 2026-10-01 12:00:00 +0100
-permalink: /privacy-policy-local-whisper-unlimited/
+permalink: /privacy-policy-oden/
 ---
 
 _Last updated: 2026-10-01_
 
 ## Summary
 
-Local Whisper Unlimited turns your speech into text entirely on your phone. Your voice and the resulting text are never sent anywhere: not to us, not to a cloud service, not to any third party. The app has no accounts, no analytics, no ads and no tracking.
+Oden turns your speech into text entirely on your phone. Your voice and the resulting text are never sent anywhere: not to us, not to a cloud service, not to any third party. The app has no accounts, no analytics, no ads and no tracking.
 
 ## Microphone and audio
 
